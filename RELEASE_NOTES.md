@@ -1,4 +1,4 @@
-First public package: version 0.1.0.
+Version 0.1.1: includes the license and attribution terms inside the skill-only download, as well as the full installer package.
 
 - Portable Agent Skills layout with documented local destinations for Codex, Claude Code, Gemini CLI, Antigravity, and Freebuff CLI.
 - Windows installer and removal helper with integrity checks and preserved backups.

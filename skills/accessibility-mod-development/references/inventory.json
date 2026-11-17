@@ -217,6 +217,11 @@
       "sha256": "931eba3b68f88634ad4e8772855353b5a86e4b4d0d7114e1162c52db9c6d9027"
     },
     {
+      "path": "LICENSE",
+      "bytes": 2206,
+      "sha256": "599fee91c768ccb698467a565196d8390259f0803f82dc2b46449b6ec7a8e44e"
+    },
+    {
       "path": "references/advanced-interaction.md",
       "bytes": 6220,
       "sha256": "3fece86e477f8bf07524ed98412b7f1c0527af79aaa7d02206894250a4abfbdb"
