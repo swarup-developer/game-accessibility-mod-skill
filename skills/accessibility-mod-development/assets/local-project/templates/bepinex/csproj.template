@@ -1,0 +1,143 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- WICHTIG: TargetFramework passend zum Spiel wählen!
+         Die meisten BepInEx Mono-Spiele: net472
+         Neuere Spiele mit .NET 6+: net6.0
+         Prüfe was andere BepInEx-Mods für dieses Spiel verwenden -->
+    <TargetFramework>TARGET_FRAMEWORK</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <AssemblyName>MODNAME</AssemblyName>
+    <RootNamespace>NAMESPACE</RootNamespace>
+  </PropertyGroup>
+
+  <!-- WICHTIG: Dekompilierte Dateien vom Build ausschließen! -->
+  <ItemGroup>
+    <Compile Remove="decompiled\**" />
+    <Compile Remove="templates\**" />
+  </ItemGroup>
+
+  <!-- BepInEx Referenzen -->
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>SPIELORDNER\BepInEx\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>SPIELORDNER\BepInEx\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Unity Referenzen (aus dem Spiel-Managed-Ordner) -->
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>SPIELORDNER\SPIELNAME_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>SPIELORDNER\SPIELNAME_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>SPIELORDNER\SPIELNAME_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>SPIELORDNER\SPIELNAME_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>SPIELORDNER\SPIELNAME_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- TextMeshPro: NUR referenzieren, wenn das Spiel es mitbringt.
+       Die meisten neueren Unity-Spiele haben Unity.TextMeshPro.dll, ältere nicht.
+       Ist die DLL da, wird HAS_TMPRO gesetzt und ReflectionHelper aktiviert
+       seinen TMPro-Code per #if. Fehlt sie, baut das Projekt trotzdem
+       (dann nur mit dem alten UnityEngine.UI.Text). -->
+  <PropertyGroup Condition="Exists('SPIELORDNER\SPIELNAME_Data\Managed\Unity.TextMeshPro.dll')">
+    <DefineConstants>$(DefineConstants);HAS_TMPRO</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="Exists('SPIELORDNER\SPIELNAME_Data\Managed\Unity.TextMeshPro.dll')">
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>SPIELORDNER\SPIELNAME_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- TextRenderingModule: liefert Font/TextMesh. UnityEngine.UI.Text verweist
+       darauf, deshalb mitreferenzieren wenn vorhanden. -->
+  <ItemGroup Condition="Exists('SPIELORDNER\SPIELNAME_Data\Managed\UnityEngine.TextRenderingModule.dll')">
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>SPIELORDNER\SPIELNAME_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Spiel-Assembly -->
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>SPIELORDNER\SPIELNAME_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Nach Build: DLL in BepInEx plugins-Ordner kopieren.
+       Retries, weil Windows die DLL sperrt solange das Spiel läuft.
+       ContinueOnError=WarnAndContinue: der Build scheitert dann nicht still,
+       sondern sagt dir hörbar, dass das Spiel noch offen ist. -->
+  <Target Name="CopyToPlugins" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)"
+          DestinationFolder="SPIELORDNER\BepInEx\plugins\"
+          Retries="5"
+          RetryDelayMilliseconds="1000"
+          ContinueOnError="WarnAndContinue">
+      <Output TaskParameter="CopiedFiles" ItemName="_DeployedPlugin" />
+    </Copy>
+    <Message Condition="'@(_DeployedPlugin)' != ''"
+             Text="Copied $(TargetFileName) to BepInEx plugins folder"
+             Importance="High" />
+    <Warning Condition="'@(_DeployedPlugin)' == ''"
+             Text="Could not copy $(TargetFileName) to SPIELORDNER\BepInEx\plugins\ - close the game and build again. The fresh DLL is at $(TargetPath)" />
+  </Target>
+
+</Project>
+
+<!--
+ANLEITUNG - Platzhalter ersetzen:
+
+1. TARGET_FRAMEWORK:
+   - Die meisten BepInEx Mono-Spiele: net472
+   - Neuere Spiele (.NET 6+): net6.0
+   - Prüfe was andere BepInEx-Mods verwenden oder die DLLs in BepInEx/core/
+
+2. SPIELORDNER: Der volle Pfad zum Spiel, z.B.:
+   C:\Program Files (x86)\Steam\steamapps\common\Spielname
+
+3. SPIELNAME: Name des Spiels (für den _Data Ordner), z.B.:
+   Pet Idle → Pet Idle_Data
+
+4. MODNAME und NAMESPACE: Dein Mod-Name, z.B.:
+   PetIdleAccessibility
+
+CHECKLISTE VOR BUILD:
+[ ] TargetFramework passend gewählt
+[ ] Alle SPIELORDNER ersetzt
+[ ] Alle SPIELNAME ersetzt
+[ ] decompiled und templates werden ausgeschlossen
+[ ] Output geht nach BepInEx\plugins\ (nicht Mods\)
+[ ] Spiel geschlossen (sonst ist die alte DLL gesperrt und der Copy-Schritt warnt)
+
+HINWEIS TextMeshPro:
+Die Unity.TextMeshPro-Referenz und HAS_TMPRO werden automatisch nur dann gesetzt,
+wenn Unity.TextMeshPro.dll im Managed-Ordner liegt. Prüfen mit:
+  dir "SPIELORDNER\SPIELNAME_Data\Managed\Unity.TextMeshPro.dll"
+Fehlt sie, liest ReflectionHelper nur UnityEngine.UI.Text - das ist kein Fehler,
+sondern heißt: das Spiel benutzt kein TextMeshPro.
+-->

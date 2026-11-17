@@ -1,0 +1,595 @@
+{
+  "created_date": "2026-11-17",
+  "files": [
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 240,
+      "sha256": "445d7bf21024a2d32c1b28d8aaf759c246333f55a15f0c0972cc2fbb93544082"
+    },
+    {
+      "path": "assets/bindings.example.json",
+      "bytes": 201,
+      "sha256": "f2811dd93dcb8e8bb739e9370e18d4629bd8460819278ef96fcd2f5bbcbc5d3b"
+    },
+    {
+      "path": "assets/local-project/scripts/Get-MelonLoaderInfo.ps1",
+      "bytes": 4838,
+      "sha256": "01118398041083b55f63cb935bf49a300801e9436bdcead92a9f5bd69eeeec41"
+    },
+    {
+      "path": "assets/local-project/scripts/hooks/pre-commit",
+      "bytes": 2455,
+      "sha256": "bbd733ff5a5d3ccf52411080705e18d8bc83d4f03489e3a2752b3b742e961941"
+    },
+    {
+      "path": "assets/local-project/scripts/Install-GitHooks.ps1",
+      "bytes": 2088,
+      "sha256": "aa7eda010702b12b5829cddd44ef20545c1630ed8a72e4eb41d06191f9e35c06"
+    },
+    {
+      "path": "assets/local-project/scripts/Test-ModSetup.ps1",
+      "bytes": 11710,
+      "sha256": "9443e5346a8f8f693d7e3a3b56191388933e068bac23569299433c413428be0a"
+    },
+    {
+      "path": "assets/local-project/templates/bepinex/csproj.template",
+      "bytes": 5917,
+      "sha256": "5a2366393815e9794430072575d5a20938555540b23cfce4b464208ff63025ba"
+    },
+    {
+      "path": "assets/local-project/templates/bepinex/DebugLogger.cs.template",
+      "bytes": 4255,
+      "sha256": "a5cd76b378463eef38d59df4fe1ea2b15bd2e8b75127f631d3bc42d3f09e93f7"
+    },
+    {
+      "path": "assets/local-project/templates/bepinex/Main.cs.template",
+      "bytes": 9659,
+      "sha256": "a980e83dd20a8c6966c1dd3595ea832c924a6861cbbc9616ae2cdad9155719a0"
+    },
+    {
+      "path": "assets/local-project/templates/bepinex/ModConfig.cs.template",
+      "bytes": 8359,
+      "sha256": "d1bfd2604d8538713648e987f1ea18e21b2a6b30a31866cfabb60a4b54a397e4"
+    },
+    {
+      "path": "assets/local-project/templates/bepinex/ScreenReader.cs.template",
+      "bytes": 10518,
+      "sha256": "037645ab8ec49c690f2bc322f16209202c6980aa44a7d377037be476eb1652f5"
+    },
+    {
+      "path": "assets/local-project/templates/melonloader/csproj.template",
+      "bytes": 6143,
+      "sha256": "4a86d02169d5439ad903a848c05306ecb0a4b9819e83d7114a57547d93faac81"
+    },
+    {
+      "path": "assets/local-project/templates/melonloader/DebugLogger.cs.template",
+      "bytes": 4254,
+      "sha256": "942729f25de8244f5e5247669d318de95c8d7e01f227b76824cb8dbb9d4765db"
+    },
+    {
+      "path": "assets/local-project/templates/melonloader/Main.cs.template",
+      "bytes": 9386,
+      "sha256": "4a4cc9985ffbaea6909566a4bb63baf528bc51c013608df06323b74f74cdd10c"
+    },
+    {
+      "path": "assets/local-project/templates/melonloader/ModConfig.cs.template",
+      "bytes": 8286,
+      "sha256": "6e77438d4453d86c56a414ae1474d60c30c350c9a1c4ea9caafbfcef89f824f8"
+    },
+    {
+      "path": "assets/local-project/templates/melonloader/ScreenReader.cs.template",
+      "bytes": 9740,
+      "sha256": "2c795f3b17f5f80eefc1928377a83f0d36c96e30406d4ec1f25c39b45edbc021"
+    },
+    {
+      "path": "assets/local-project/templates/shared/AccessStateManager.cs.template",
+      "bytes": 7748,
+      "sha256": "fc3a3271b67eb38c59e1738e0ff5eb8e6c5b171155929964bd0162cd7f0c662b"
+    },
+    {
+      "path": "assets/local-project/templates/shared/game-api.md.template",
+      "bytes": 8078,
+      "sha256": "46fb406c3776d66d43422667bbcf202aac7c1700b2e6312b08308ecce0267c64"
+    },
+    {
+      "path": "assets/local-project/templates/shared/Handler.cs.template",
+      "bytes": 7086,
+      "sha256": "c6a52d980f09bde37bc1165d705718011a445fdc11eaa4b80953c938c9bd6e63"
+    },
+    {
+      "path": "assets/local-project/templates/shared/Loc.cs.template",
+      "bytes": 6044,
+      "sha256": "d41dac84b9b840f6b102e03608fbfdcdd43857314e2e356bdc9570abd90cd4c1"
+    },
+    {
+      "path": "assets/local-project/templates/shared/project_status.md.template",
+      "bytes": 4259,
+      "sha256": "c80420e9c26730999e9858a2808c49004342e082ea9edd10355a97d6a1a53ba4"
+    },
+    {
+      "path": "assets/local-project/templates/shared/ReflectionHelper.cs.template",
+      "bytes": 7583,
+      "sha256": "63e688a183e49f73aed77f9d1a3b19854b53d2c55caf37873dfa23d16d967d05"
+    },
+    {
+      "path": "assets/template/scripts/Get-MelonLoaderInfo.ps1",
+      "bytes": 4661,
+      "sha256": "a65fe2d7b4bf39e089a6813ec6ad11069b1557297386a9831d718c5ee3cbb2c5"
+    },
+    {
+      "path": "assets/template/scripts/hooks/pre-commit",
+      "bytes": 2391,
+      "sha256": "b309cca4ec958f807e6e1eb99e8d3c5891a37a6c21fbf61772fad2b2d32a7651"
+    },
+    {
+      "path": "assets/template/scripts/Install-GitHooks.ps1",
+      "bytes": 2021,
+      "sha256": "ad9c24d7b6fc9a1c52580ceeb372e06625599eaf18113ea5b52ba61d01e7db3a"
+    },
+    {
+      "path": "assets/template/scripts/Test-ModSetup.ps1",
+      "bytes": 11339,
+      "sha256": "bb1f7d837653408563591f9722669c340c349a6e1d41097fc1bd4ed68a9d4ca4"
+    },
+    {
+      "path": "assets/template/templates/bepinex/csproj.template",
+      "bytes": 3347,
+      "sha256": "b67963cc891f1d4c62c9ab5d475ad38b54a6a0850445a75026257586317637d5"
+    },
+    {
+      "path": "assets/template/templates/bepinex/DebugLogger.cs.template",
+      "bytes": 4111,
+      "sha256": "d3057983003c0b63e9b27581ebdde2ae8c95fb770a1feb6c65e9b1d63efb053c"
+    },
+    {
+      "path": "assets/template/templates/bepinex/Main.cs.template",
+      "bytes": 6201,
+      "sha256": "608a4480bca92539dd785c6baa463208aeea1b9545198a0585b9f642a8b4216b"
+    },
+    {
+      "path": "assets/template/templates/bepinex/ModConfig.cs.template",
+      "bytes": 7750,
+      "sha256": "345b1fd804d8ccab8dce0a317f6655febf25a348e8afcf68a153eb7303047a8e"
+    },
+    {
+      "path": "assets/template/templates/bepinex/ScreenReader.cs.template",
+      "bytes": 4933,
+      "sha256": "2b5d1c753333177f21b2148b86fada556dbcf80b9f8ee6cfc9f40e1f4e8eb733"
+    },
+    {
+      "path": "assets/template/templates/melonloader/csproj.template",
+      "bytes": 3586,
+      "sha256": "93112555f842737e7b7ccf02de06756befd59377c60759fcae3739666c4d7be0"
+    },
+    {
+      "path": "assets/template/templates/melonloader/DebugLogger.cs.template",
+      "bytes": 4125,
+      "sha256": "f4f4fe837624d0ece85f3bd7a7c68973a9d74c0f5d0bee1d92a0f608c6372dbc"
+    },
+    {
+      "path": "assets/template/templates/melonloader/Main.cs.template",
+      "bytes": 6014,
+      "sha256": "0c868bebb09920d9d950aa9ddeb03187553dbe35aee64e46aa470560e4273b02"
+    },
+    {
+      "path": "assets/template/templates/melonloader/ModConfig.cs.template",
+      "bytes": 7674,
+      "sha256": "449f69bdd95d121746f01c85c39e912d6882ab1f065dab8fba6a950007a760bc"
+    },
+    {
+      "path": "assets/template/templates/melonloader/ScreenReader.cs.template",
+      "bytes": 4951,
+      "sha256": "914f5e57fdd0b83313f329b4cc2af3085806b439a148f36103daa6409af9a8b3"
+    },
+    {
+      "path": "assets/template/templates/shared/AccessStateManager.cs.template",
+      "bytes": 7536,
+      "sha256": "963e6cc372fc340cd8c94134b74574d36828511ad3164deabaed59cc09877d3d"
+    },
+    {
+      "path": "assets/template/templates/shared/game-api.md.template",
+      "bytes": 7697,
+      "sha256": "a42f3f807465ef277ee746df3b30e2b58a19277b2ad2a199f737bd5e9fa0017f"
+    },
+    {
+      "path": "assets/template/templates/shared/Handler.cs.template",
+      "bytes": 6849,
+      "sha256": "8637036dcc6e3538f0c02a60ae9dc622906dc129e9bc768f0ebb8bf497a9d09b"
+    },
+    {
+      "path": "assets/template/templates/shared/Loc.cs.template",
+      "bytes": 5298,
+      "sha256": "ba5da41fb1090fb343f17b8aff972f1e67be6502211c28a36c6fcaa454f4cf9d"
+    },
+    {
+      "path": "assets/template/templates/shared/project_status.md.template",
+      "bytes": 4123,
+      "sha256": "4807e4a415974c3ed14ec540faa21752796a91ef9b23e729d8319cea881cc7ff"
+    },
+    {
+      "path": "assets/template/templates/shared/ReflectionHelper.cs.template",
+      "bytes": 5068,
+      "sha256": "0bc778fb4717675563abad318d6d201099175c5fd1fef62acc4774a2db64067e"
+    },
+    {
+      "path": "assets/verification-record.example.json",
+      "bytes": 379,
+      "sha256": "931eba3b68f88634ad4e8772855353b5a86e4b4d0d7114e1162c52db9c6d9027"
+    },
+    {
+      "path": "references/advanced-interaction.md",
+      "bytes": 6220,
+      "sha256": "3fece86e477f8bf07524ed98412b7f1c0527af79aaa7d02206894250a4abfbdb"
+    },
+    {
+      "path": "references/bindings-and-movement.md",
+      "bytes": 8404,
+      "sha256": "6842e42a22967a8d57b4fc90481965942f5e851ca5f8badea92d830cfa155687"
+    },
+    {
+      "path": "references/engine-routing.md",
+      "bytes": 5198,
+      "sha256": "231b0d2a595e7158f67b7a03adbd5f60f7838890564da5e221caba7f0169faf2"
+    },
+    {
+      "path": "references/execution-examples.md",
+      "bytes": 7724,
+      "sha256": "052c942285e77a94726fa7989bc4281aa940f551d3dfb7e13517430a146fe756"
+    },
+    {
+      "path": "references/expert-workflow.md",
+      "bytes": 7015,
+      "sha256": "08fcad714c1c82f6409f4efa8b8d4eabb75810d8d4210f36817fdccf7cd7923f"
+    },
+    {
+      "path": "references/external-sources.md",
+      "bytes": 5587,
+      "sha256": "0e62866f3ccf3a37bbf2ff4a02b517dc39c4a3ea76936624212579521a9a2113"
+    },
+    {
+      "path": "references/interaction-checks.md",
+      "bytes": 4485,
+      "sha256": "8d5300a5ae5713998484d26df1f6fd005d8096eda78a54472955cb0714525c12"
+    },
+    {
+      "path": "references/library-index.md",
+      "bytes": 13895,
+      "sha256": "d345d843f57f54c7590a6d8895f5895eef739f21c3aab6cd08abef2b17a5eca2"
+    },
+    {
+      "path": "references/local-project/CHANGELOG.md",
+      "bytes": 4189,
+      "sha256": "7713404dd0e68a2b8fbb75622fb8daf722e81fbb1f73a8e7d4cf0aa68121348f"
+    },
+    {
+      "path": "references/local-project/CONTRIBUTING",
+      "bytes": 1593,
+      "sha256": "8957088a3ffc28a007b3284fd86a57998a5a7fd14ff8e6468c12b1e68c9d1dc2"
+    },
+    {
+      "path": "references/local-project/docs/ACCESSIBILITY_MODDING_GUIDE.md",
+      "bytes": 25359,
+      "sha256": "86631f7c2ae2f5d70babf1b6fac3d7965b2a19c47b211e9c6200ab54744d1ce4"
+    },
+    {
+      "path": "references/local-project/docs/distribution-guide.md",
+      "bytes": 11523,
+      "sha256": "cb0f1ac4d7a310364413147228ba307a8a1b1f555da28af56da728bb191f9ed8"
+    },
+    {
+      "path": "references/local-project/docs/external-references/book-of-accessibility-modding.md",
+      "bytes": 3383,
+      "sha256": "3f79278f85d1ef9a13dc9b16e32cfc61fcefcfd196f77d699e35fed235831114"
+    },
+    {
+      "path": "references/local-project/docs/git-github-guide.md",
+      "bytes": 7485,
+      "sha256": "b3554583986ec74e1c79d3952f1e7e57f093bda02d4e88594b30ae8ed74ad43c"
+    },
+    {
+      "path": "references/local-project/docs/known-issues.md",
+      "bytes": 2190,
+      "sha256": "80a96240ce9c368526d768b285964d5e16c71d9ccdebbe9e78bc234ba162b03e"
+    },
+    {
+      "path": "references/local-project/docs/legacy-unity-modding.md",
+      "bytes": 8624,
+      "sha256": "2c2687b2db5aa78927da2b669d11b9979066ea25c8523e036790bd236a61061f"
+    },
+    {
+      "path": "references/local-project/docs/localization-guide.md",
+      "bytes": 13823,
+      "sha256": "85f577580250a9bd11e1ba408b42ed59581d0fbb1558cc49a9fdf7566aab4859"
+    },
+    {
+      "path": "references/local-project/docs/menu-accessibility-checklist.md",
+      "bytes": 3185,
+      "sha256": "965a5364722163f54b47bdfbe4d5a15c071398f2b8e7a30aa48a7b32b64c03bf"
+    },
+    {
+      "path": "references/local-project/docs/menu-accessibility-patterns.md",
+      "bytes": 8597,
+      "sha256": "a0ffcf2d37857a3dc772b052b7e1d08c8cef22be863b26a3dad90fc0f70f5e8b"
+    },
+    {
+      "path": "references/local-project/docs/setup-guide.md",
+      "bytes": 79683,
+      "sha256": "c27571ab19a83582ddf2a8f6c2bb808f15ae4e05a03d0f14d27f3ebf650ec332"
+    },
+    {
+      "path": "references/local-project/docs/state-management-guide.md",
+      "bytes": 12004,
+      "sha256": "18992071e25baa5956e153f1fadb5998e0f14053af8aa2231b1bf0c9854b0ac9"
+    },
+    {
+      "path": "references/local-project/docs/technical-reference.md",
+      "bytes": 16849,
+      "sha256": "a06eee99d658ec87aadc4ba4e3d808a893fbfbfb54ab48a666d1f6510baba6d0"
+    },
+    {
+      "path": "references/local-project/docs/unity-reflection-guide.md",
+      "bytes": 6557,
+      "sha256": "ab0bb98b7f947302d971e3fa8886b6b92310c4098d62115d5dc58ca4feef4093"
+    },
+    {
+      "path": "references/local-project/docs-de/setup-guide.md",
+      "bytes": 47193,
+      "sha256": "66beee57fefe830bc2a3a6b4c179674afb723416a158734b5590b9a7bcb6aaed"
+    },
+    {
+      "path": "references/local-project/docs-de/technical-reference.md",
+      "bytes": 16765,
+      "sha256": "b852d433cc4dcd96015611b6e9c15225e8efac2c44de07980f3f21ce889974a7"
+    },
+    {
+      "path": "references/local-project/LICENSE",
+      "bytes": 707,
+      "sha256": "177ff584ae1913bf526b5ad7c5b2128fe70d1be9fe0ee4cf903081b75febc435"
+    },
+    {
+      "path": "references/local-project/project-instructions.md",
+      "bytes": 6705,
+      "sha256": "2505c0a48844e91544337f2c925846c7ba398a916f85db0296be690e9b222fc6"
+    },
+    {
+      "path": "references/local-project/README.md",
+      "bytes": 11097,
+      "sha256": "9cad049740d945e75a387ff7deb001871432fe1c899296c7e3f5216fe62e503e"
+    },
+    {
+      "path": "references/modding-field-guide.md",
+      "bytes": 6685,
+      "sha256": "4dcf40f243ae9305eec88e9310bdb664207879c60e5158d1bc58f4b945747db0"
+    },
+    {
+      "path": "references/modding-reading-list.json",
+      "bytes": 2049,
+      "sha256": "5623a8233cd29d97b018525f67f82b4b2fad05b3e0be551d0756bb9804f8e7ca"
+    },
+    {
+      "path": "references/portable-workflow.md",
+      "bytes": 4336,
+      "sha256": "b2498aac9ca676b9fe0ab62187877d3a13b6cfa9368b0d9bd0383a330e3c37a3"
+    },
+    {
+      "path": "references/regression-and-updates.md",
+      "bytes": 4635,
+      "sha256": "798014546f6a4ee92e8e693e5587a4c9f6b19b1b62ea615ab7ba2cfcc7cfc44a"
+    },
+    {
+      "path": "references/research-manifest.json",
+      "bytes": 36746,
+      "sha256": "090833e1f393b90f00f2e2b3cbb58e04dea08ee7c1bc0ace484c130ccf26e3b6"
+    },
+    {
+      "path": "references/research-sources.md",
+      "bytes": 16181,
+      "sha256": "ec51f67cf9e65d3b4333f12760c3ebd77ecd5b5fef9aa861cfe427870681950f"
+    },
+    {
+      "path": "references/source-manifest.json",
+      "bytes": 29119,
+      "sha256": "c4093eb0e96cfc24da04c2098d0d6e265d39ca45c17cb6d06a1566836cac0d10"
+    },
+    {
+      "path": "references/speech-backends.md",
+      "bytes": 5886,
+      "sha256": "bf08e7dde56f98c704ca078e3fbdd60194bc77d4cf146a26069902af216c4032"
+    },
+    {
+      "path": "references/technical-cautions.md",
+      "bytes": 5651,
+      "sha256": "f9132f4b425463a95b38eff8d063af76bb5eb73e63f307496acf3dc190bc7388"
+    },
+    {
+      "path": "references/template/CHANGELOG.md",
+      "bytes": 4114,
+      "sha256": "c3966f116213cb9da0f929b4abc687d954e547869aeb7e33adafde0775023977"
+    },
+    {
+      "path": "references/template/CONTRIBUTING",
+      "bytes": 1556,
+      "sha256": "0b4fb1541c6362f68effe7327af83e57fc64cf8964d1de398dded45bb8497002"
+    },
+    {
+      "path": "references/template/docs/ACCESSIBILITY_MODDING_GUIDE.md",
+      "bytes": 24712,
+      "sha256": "186bde7c0679ae311ee1443745a24fee0f928239c72b809b432b9cdaedc2f10e"
+    },
+    {
+      "path": "references/template/docs/distribution-guide.md",
+      "bytes": 11187,
+      "sha256": "5f3475cd85af6cd4ea0d847ad3e531fb142856d378382693ca2923860d635bef"
+    },
+    {
+      "path": "references/template/docs/external-references/book-of-accessibility-modding.md",
+      "bytes": 3320,
+      "sha256": "4580e25c2dcc6ebfbbbf64ab814bae7fed9e6cb6666e3e4d46075be28c877db3"
+    },
+    {
+      "path": "references/template/docs/git-github-guide.md",
+      "bytes": 7170,
+      "sha256": "454e019ba26a6e99d268be4651457ed263e7edc6ce182618cae70f23326f7a82"
+    },
+    {
+      "path": "references/template/docs/known-issues.md",
+      "bytes": 2152,
+      "sha256": "e085167f6c9381c3bdd63ba68049a07f3caec4bd3644525f27187808ef6fe6b8"
+    },
+    {
+      "path": "references/template/docs/legacy-unity-modding.md",
+      "bytes": 8367,
+      "sha256": "f2ffe720a828ef642798fbda0142eef8ecd01374a702c1e0d3faff139bac69c4"
+    },
+    {
+      "path": "references/template/docs/localization-guide.md",
+      "bytes": 13267,
+      "sha256": "f63970c6e81c4e61de9d883d29d899e064c8a7cb04ebc789c722b57933c2d9d8"
+    },
+    {
+      "path": "references/template/docs/menu-accessibility-checklist.md",
+      "bytes": 3093,
+      "sha256": "7b30d0a10aa153d694ed6c96a3410ec26684442c6e38a664cb740eeac5ddf57d"
+    },
+    {
+      "path": "references/template/docs/menu-accessibility-patterns.md",
+      "bytes": 8275,
+      "sha256": "3c5a242df72788e9513260612d2faefa3d38d936a4ef81cbe19f6efab8d4ba08"
+    },
+    {
+      "path": "references/template/docs/setup-guide.md",
+      "bytes": 77625,
+      "sha256": "71bb3effe0c1a04a9469f86697ed199ebf9138aa791a3d6f0d3a6891c2051182"
+    },
+    {
+      "path": "references/template/docs/state-management-guide.md",
+      "bytes": 11568,
+      "sha256": "a42fbde17b6909b7357c29ebc634a7890713644ee4eb7b60a66f436b57e13b20"
+    },
+    {
+      "path": "references/template/docs/technical-reference.md",
+      "bytes": 15607,
+      "sha256": "76631fb2316b3a9ac34bd73ec3e5fe09b29ce9c922cc6f0ea4a0f64215197c14"
+    },
+    {
+      "path": "references/template/docs/unity-reflection-guide.md",
+      "bytes": 6313,
+      "sha256": "df2c45e90f28c9a7488b81ce2f2e360a447850f88b87a3c703a1781310d823b3"
+    },
+    {
+      "path": "references/template/docs-de/setup-guide.md",
+      "bytes": 45551,
+      "sha256": "954ec18159be79ff4829f2ba96352068e0a6dfdfdd03358e04abd4fa7b835c3f"
+    },
+    {
+      "path": "references/template/docs-de/technical-reference.md",
+      "bytes": 15498,
+      "sha256": "4549a9ad60accb60e0a0cc30fdd8947ae942c58075f6169aa52a7da7d7f9c61b"
+    },
+    {
+      "path": "references/template/LICENSE",
+      "bytes": 690,
+      "sha256": "980b8eb3c20ecfa33d38d58a2a0dc45612010b86888343f0007973fdc3a2269c"
+    },
+    {
+      "path": "references/template/project-instructions.de.md",
+      "bytes": 5406,
+      "sha256": "fecfe3f0fb93ea1f7f44d2bd9d79823033e43fc44791c51f4904bc10dc8a1118"
+    },
+    {
+      "path": "references/template/project-instructions.md",
+      "bytes": 6591,
+      "sha256": "0a3e8eb68378cc94962626e032c2bfbb88c6296c6ce67c75e71aa41d045e7917"
+    },
+    {
+      "path": "references/template/README.md",
+      "bytes": 10951,
+      "sha256": "639ee1e6106d46979c8db6f29b5863cc71dbd50f84b11346febfcd7f2b064ed3"
+    },
+    {
+      "path": "references/upstream/docs/ACCESSIBILITY_MODDING_GUIDE.md",
+      "bytes": 24712,
+      "sha256": "8714f6fe52e7f568da2730f3a5492b3e63d71e692edff5a3b2876a6c843302ea"
+    },
+    {
+      "path": "references/upstream/docs/external-references/book-of-accessibility-modding.md",
+      "bytes": 3321,
+      "sha256": "351f206eb05be58da8291650b51174769b5284ae25417cff040d0ca5be145727"
+    },
+    {
+      "path": "references/upstream/docs/git-github-guide.md",
+      "bytes": 7182,
+      "sha256": "7bf543fb0acc5ccc5c8e356716196d681da233c6be6ea2209176767950ae1619"
+    },
+    {
+      "path": "references/upstream/docs/known-issues.md",
+      "bytes": 2154,
+      "sha256": "005f287ca5d7729689045c776d5db3a8688d42014a65e1c45e91daad7b3159d4"
+    },
+    {
+      "path": "references/upstream/docs/setup-guide.md",
+      "bytes": 77694,
+      "sha256": "d03faf4982d0f5b62ba549242f0a1b8606e31396fc934118fc08c8cd6d7620d7"
+    },
+    {
+      "path": "references/upstream/docs/unity-reflection-guide.md",
+      "bytes": 6313,
+      "sha256": "65836be4361ebf726acb44b6881a203af03920be4d3b6e287fc23e14a813d5d2"
+    },
+    {
+      "path": "references/upstream/docs-de/localization-guide.md",
+      "bytes": 13744,
+      "sha256": "ac1219994289cd58a5511957fafdc55a415ad3ff76db0164356ded9c271fd1cf"
+    },
+    {
+      "path": "references/upstream/docs-de/menu-accessibility-checklist.md",
+      "bytes": 2508,
+      "sha256": "4d8084d9f1cf509a4aa154e8c85420c9a2016a4bf9cd1199154960f5ca472ae0"
+    },
+    {
+      "path": "references/upstream/docs-de/setup-guide.md",
+      "bytes": 45582,
+      "sha256": "d1166f67c03b5fd13e450f6a9d564e3830a9889c62901afb1abf146b5481eb23"
+    },
+    {
+      "path": "references/upstream/project-instructions.md",
+      "bytes": 6233,
+      "sha256": "69f7877a6053953234998df01842ae88cfe313c6c0c21618c4c1ee469e859a4e"
+    },
+    {
+      "path": "scripts/check_bindings.py",
+      "bytes": 4304,
+      "sha256": "f1d30aa077d62f62f06e2f23a201c44c49114525105043d348aa3464f12b4aeb"
+    },
+    {
+      "path": "scripts/check_evidence.py",
+      "bytes": 3221,
+      "sha256": "eb3bb801eb777d8a99bac49ac84cb8e86f3d1742b49e634db8a3c7b8e475fb8d"
+    },
+    {
+      "path": "scripts/inspect_game.py",
+      "bytes": 4176,
+      "sha256": "9d5d6b074637a64622fcd117d9a19bee44679e74418a763e49812418428d2016"
+    },
+    {
+      "path": "scripts/search_github.py",
+      "bytes": 3738,
+      "sha256": "a51baa04986f3a230895d77785fae8c9e248808e5b87a4ec1bd6da4050d06999"
+    },
+    {
+      "path": "scripts/search_local.py",
+      "bytes": 3287,
+      "sha256": "8990a0c7ace245a91818d4b0635bf74034c73abbec41f281f208e13bb0262a36"
+    },
+    {
+      "path": "scripts/search_web.py",
+      "bytes": 1602,
+      "sha256": "25b0179ba01d4f45256938c486cfdc0ca5128f94e61d00162715ab4c95605532"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 14314,
+      "sha256": "2df1b9cc6b1767739fdfc534f3f89325f3ee58280aeb2d7f945f379f09742272"
+    }
+  ]
+}

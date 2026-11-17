@@ -1,0 +1,200 @@
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using UnityEngine;
+using UnityEngine.UI;
+#if HAS_TMPRO
+using TMPro;
+#endif
+
+namespace NAMESPACE
+{
+    /// <summary>
+    /// Helper class for accessing private fields via Reflection.
+    /// Use this when game classes use [SerializeField] private fields.
+    /// See docs/unity-reflection-guide.md for usage patterns.
+    /// </summary>
+    public static class ReflectionHelper
+    {
+        /// <summary>
+        /// Instance fields declared directly on one type, public or private.
+        /// DeclaredOnly is deliberate: GetFieldInfo walks the base chain itself,
+        /// because BindingFlags.NonPublic does NOT inherit.
+        /// </summary>
+        private const BindingFlags DeclaredInstance =
+            BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance |
+            BindingFlags.DeclaredOnly;
+
+        /// <summary>
+        /// FieldInfo cache, keyed by type + field name. Menu code asks for the
+        /// same field every frame and reflection lookups are expensive.
+        /// Caching FieldInfo is safe - it is a reference, not a value, so it can
+        /// never go stale the way a cached HP number would.
+        /// </summary>
+        private static readonly Dictionary<string, FieldInfo> FieldCache =
+            new Dictionary<string, FieldInfo>();
+
+        /// <summary>
+        /// Resolves a field by name, walking up the base classes.
+        /// A plain GetField(name, NonPublic | Instance) on the most-derived type
+        /// silently misses private fields declared in a base class - which is
+        /// exactly where Unity games keep their [SerializeField]s.
+        /// Returns null if no type in the chain declares the field.
+        /// </summary>
+        public static FieldInfo GetFieldInfo(Type type, string fieldName)
+        {
+            if (type == null || string.IsNullOrEmpty(fieldName)) return null;
+
+            var key = type.AssemblyQualifiedName + "|" + fieldName;
+            FieldInfo cached;
+            if (FieldCache.TryGetValue(key, out cached)) return cached;
+
+            FieldInfo found = null;
+            for (var current = type; current != null; current = current.BaseType)
+            {
+                found = current.GetField(fieldName, DeclaredInstance);
+                if (found != null) break;
+            }
+
+            // Misses are cached too - a field the game does not have will not
+            // appear later, and re-scanning the chain every frame is wasteful.
+            FieldCache[key] = found;
+            return found;
+        }
+
+        /// <summary>
+        /// Resolves a field, trying several possible names in order.
+        /// Useful when the naming convention is unknown (name vs m_name vs _name).
+        /// Returns the first match, or null if none of the names exist.
+        /// </summary>
+        public static FieldInfo GetFieldInfo(Type type, params string[] possibleNames)
+        {
+            if (type == null || possibleNames == null) return null;
+
+            foreach (var name in possibleNames)
+            {
+                var field = GetFieldInfo(type, name);
+                if (field != null) return field;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets a private field value as a reference type.
+        /// Also finds public fields and fields declared in base classes.
+        /// Returns null if the field does not exist or its value is null.
+        /// </summary>
+        public static T GetPrivateField<T>(object obj, string fieldName) where T : class
+        {
+            if (obj == null) return null;
+
+            try
+            {
+                var field = GetFieldInfo(obj.GetType(), fieldName);
+                return field == null ? null : field.GetValue(obj) as T;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"[ReflectionHelper] Failed to get field '{fieldName}': {ex.Message}");
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Gets a private field value as a value type (int, bool, enum, etc.).
+        /// Also finds public fields and fields declared in base classes.
+        /// Returns defaultValue if the field does not exist or holds null.
+        /// </summary>
+        public static T GetPrivateFieldValue<T>(object obj, string fieldName, T defaultValue = default) where T : struct
+        {
+            if (obj == null) return defaultValue;
+
+            try
+            {
+                var field = GetFieldInfo(obj.GetType(), fieldName);
+                if (field == null) return defaultValue;
+
+                var value = field.GetValue(obj);
+                if (value == null) return defaultValue;
+
+                return (T)value;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"[ReflectionHelper] Failed to get field '{fieldName}': {ex.Message}");
+                return defaultValue;
+            }
+        }
+
+        /// <summary>
+        /// Sets a private field value. Returns false if the field does not exist.
+        /// </summary>
+        public static bool SetPrivateField(object obj, string fieldName, object value)
+        {
+            if (obj == null) return false;
+
+            try
+            {
+                var field = GetFieldInfo(obj.GetType(), fieldName);
+                if (field == null) return false;
+
+                field.SetValue(obj, value);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"[ReflectionHelper] Failed to set field '{fieldName}': {ex.Message}");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Shortcut: reads the string out of a private text-component field.
+        /// Tries the field name as-is, then with an m_ prefix, first as
+        /// TextMeshProUGUI (only if the game ships TextMeshPro), then as the
+        /// legacy UnityEngine.UI.Text. Returns null if nothing matched.
+        /// </summary>
+        public static string GetTextFromPrivateField(object obj, string fieldName)
+        {
+            if (obj == null) return null;
+
+#if HAS_TMPRO
+            var tmp = GetPrivateField<TextMeshProUGUI>(obj, fieldName);
+            if (tmp != null) return tmp.text;
+
+            tmp = GetPrivateField<TextMeshProUGUI>(obj, "m_" + fieldName);
+            if (tmp != null) return tmp.text;
+#endif
+
+            var text = GetPrivateField<Text>(obj, fieldName);
+            if (text != null) return text.text;
+
+            text = GetPrivateField<Text>(obj, "m_" + fieldName);
+            if (text != null) return text.text;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Lists every instance field of a type and its base classes.
+        /// Exploration aid - call it once from a debug key, not every frame.
+        /// </summary>
+        public static void LogPrivateFields(Type type)
+        {
+            if (type == null)
+            {
+                Debug.LogWarning("[ReflectionHelper] LogPrivateFields called with null type");
+                return;
+            }
+
+            Debug.Log($"[ReflectionHelper] Instance fields of {type.Name}:");
+            for (var current = type; current != null; current = current.BaseType)
+            {
+                foreach (var field in current.GetFields(DeclaredInstance))
+                {
+                    Debug.Log($"  - {current.Name}.{field.Name} : {field.FieldType.Name}");
+                }
+            }
+        }
+    }
+}

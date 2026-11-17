@@ -1,0 +1,12 @@
+{
+  "checked_date": "2026-11-17",
+  "skill_name": "accessibility-mod-development",
+  "agents": {
+    "Codex": {"user": ".agents/skills", "project": ".agents/skills", "source": "https://developers.openai.com/codex/skills"},
+    "Claude": {"user": ".claude/skills", "project": ".claude/skills", "source": "https://code.claude.com/docs/en/skills"},
+    "Gemini": {"user": ".agents/skills", "project": ".agents/skills", "source": "https://geminicli.com/docs/cli/skills/"},
+    "Antigravity": {"user": ".gemini/config/skills", "project": ".agents/skills", "source": "https://antigravity.google/docs/skills"},
+    "Freebuff": {"user": ".agents/skills", "project": ".agents/skills", "source": "https://github.com/CodebuffAI/freebuff/blob/46aeca799e36a405bd5f832b8b88f232f30d96fd/cli/src/utils/skill-registry.ts"}
+  },
+  "validation_level": "Documented discovery paths and local installer tests; not a live certification of every assistant or cloud surface."
+}

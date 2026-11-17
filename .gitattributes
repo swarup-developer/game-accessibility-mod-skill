@@ -1,0 +1,8 @@
+# Keep byte-verified reference snapshots and release inputs unchanged on checkout.
+* -text
+# Historical snapshots retain their original formatting and upstream whitespace.
+skills/accessibility-mod-development/assets/template/** -whitespace
+skills/accessibility-mod-development/assets/local-project/** -whitespace
+skills/accessibility-mod-development/references/template/** -whitespace
+skills/accessibility-mod-development/references/local-project/** -whitespace
+skills/accessibility-mod-development/references/upstream/** -whitespace

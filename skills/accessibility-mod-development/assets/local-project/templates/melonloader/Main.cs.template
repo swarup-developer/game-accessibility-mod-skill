@@ -1,0 +1,256 @@
+using MelonLoader;
+using UnityEngine;
+using System.Collections;
+
+// ============================================================================
+// KRITISCH: Zugriff auf Spielcode
+// ============================================================================
+// Jeder Zugriff auf Spielklassen VOR dem vollständigen Laden crasht!
+//
+// VERBOTEN in OnInitializeMelon() oder früher:
+//   - Spielmanager-Singletons (GameManager.i, AudioManager.instance, etc.)
+//   - typeof(SpielKlasse) in Harmony-Attributen
+//
+// ERLAUBT erst ab OnSceneWasLoaded() / wenn CheckGameReady() true ist.
+//
+// Bei Crashes oder stillem Fehlschlagen:
+//   Siehe docs/technical-reference.md Abschnitt "KRITISCH: Zugriff auf Spielcode"
+//
+// CheckGameReady() gates game-facing work ONLY. Mod-only hotkeys (F1 help,
+// F12 debug, Ctrl+F11 settings) run before readiness on purpose: the startup
+// announcement promises "F1 for help", so F1 has to answer from frame one.
+// ============================================================================
+
+[assembly: MelonInfo(typeof(NAMESPACE.Main), "MODNAME", "1.0.0", "AUTOR")]
+[assembly: MelonGame("ENTWICKLER", "SPIELNAME")]
+
+namespace NAMESPACE
+{
+    /// <summary>
+    /// Main mod entry point. Coordinates all handlers and processes global hotkeys.
+    ///
+    /// BEST PRACTICE: Keep this class SMALL!
+    /// - Only lifecycle methods (OnInitializeMelon, OnUpdate, OnApplicationQuit)
+    /// - Only global hotkey dispatch (F1-F12, Tab, Enter)
+    /// - Only handler instantiation and update calls
+    ///
+    /// Put ALL feature logic in separate Handler classes.
+    /// This makes the code easier to maintain and test.
+    /// </summary>
+    public class Main : MelonMod
+    {
+        #region Fields
+
+        /// <summary>
+        /// True once the game's own managers exist, so handler code may touch game
+        /// classes. Gates game-facing work ONLY - never mod-only hotkeys.
+        /// </summary>
+        private bool _gameReady = false;
+
+        /// <summary>True once the "no readiness detection configured" notice was logged.</summary>
+        private bool _readinessNoticeLogged = false;
+
+        /// <summary>
+        /// Debug mode - when true, logs all screenreader output and detailed game state.
+        /// Toggle with F12.
+        /// </summary>
+        public static bool DebugMode = false;
+
+        // Handlers - one per feature/screen
+        // private InventoryHandler _inventoryHandler;
+        // private DialogHandler _dialogHandler;
+        // private ShopHandler _shopHandler;
+
+        #endregion
+
+        #region Lifecycle
+
+        public override void OnInitializeMelon()
+        {
+            // ModConfig first: every system below may read a setting, and reading an
+            // unbound MelonPreferences entry throws NullReferenceException.
+            ModConfig.Initialize();
+            ScreenReader.Initialize();
+            Loc.Initialize();
+            InitializeHandlers();
+            MelonCoroutines.Start(AnnounceStartupDelayed());
+        }
+
+        private void InitializeHandlers()
+        {
+            // Create handler instances here
+            // _inventoryHandler = new InventoryHandler();
+            // _dialogHandler = new DialogHandler();
+        }
+
+        private IEnumerator AnnounceStartupDelayed()
+        {
+            // Short delay so screenreader is ready
+            yield return new WaitForSeconds(1f);
+            ScreenReader.Say(Loc.Get("mod_loaded"));
+        }
+
+        public override void OnUpdate()
+        {
+            // 1. The settings menu owns all input while it is open.
+            if (ModConfig.IsMenuOpen)
+            {
+                ModConfig.Update();
+                return;
+            }
+
+            // 2. Mod-only hotkeys touch no game class, so they must work before the
+            //    game is ready - otherwise every key is dead and the mod stays silent.
+            if (ProcessGlobalHotkeys()) return;
+
+            // 3. Everything below may touch game classes - gate it on readiness.
+            if (!CheckGameReady()) return;
+
+            if (ProcessGameHotkeys()) return;
+
+            // Update all handlers
+            UpdateHandlers();
+        }
+
+        /// <summary>
+        /// Reports whether game classes are safe to touch. Gates handler updates and
+        /// game-facing hotkeys only.
+        /// </summary>
+        private bool CheckGameReady()
+        {
+            if (_gameReady) return true;
+
+            // === ADJUST TO YOUR GAME ===
+            // Uncomment, replace with your game's managers (docs/game-api.md),
+            // then DELETE the template fallback below.
+            // if (GameManager.instance != null && UIManager.instance != null)
+            // {
+            //     _gameReady = true;
+            //     MelonLogger.Msg("Game ready");
+            //     return true;
+            // }
+            // return false;
+
+            // TEMPLATE FALLBACK - no detection configured yet.
+            // Returning false here would disable every handler forever, and for a blind
+            // user that silence is indistinguishable from "working, nothing to say".
+            // So the scaffold reports ready and says so once, loudly, in the log.
+            if (!_readinessNoticeLogged)
+            {
+                _readinessNoticeLogged = true;
+                MelonLogger.Warning(
+                    "CheckGameReady(): no game-ready detection configured - handler updates " +
+                    "run unguarded. Add your game's singleton check (docs/game-api.md).");
+                DebugLogger.LogState("CheckGameReady: no detection configured, assuming ready");
+            }
+
+            _gameReady = true;
+            return true;
+        }
+
+        public override void OnSceneWasLoaded(int buildIndex, string sceneName)
+        {
+            MelonLogger.Msg($"Scene loaded: {sceneName}");
+            DebugLogger.LogState($"Scene changed to: {sceneName}");
+
+            // Re-detect for the new scene: the old scene's managers and every game
+            // reference cached from it are gone. Handlers must re-acquire theirs.
+            _gameReady = false;
+        }
+
+        public override void OnApplicationQuit()
+        {
+            ScreenReader.Shutdown();
+        }
+
+        #endregion
+
+        #region Hotkeys
+
+        /// <summary>
+        /// Mod-only hotkeys: help, debug toggle, settings menu. Runs every frame, also
+        /// before the game is ready, so NOTHING here may touch a game class.
+        /// Returns true if a key was handled.
+        /// </summary>
+        private bool ProcessGlobalHotkeys()
+        {
+            // F12 = Toggle debug mode
+            if (Input.GetKeyDown(KeyCode.F12))
+            {
+                DebugMode = !DebugMode;
+                MelonLogger.Msg($"Debug mode {(DebugMode ? "enabled" : "disabled")}");
+                ScreenReader.Say(Loc.Get(DebugMode ? "debug_on" : "debug_off"));
+                return true;
+            }
+
+            // Ctrl+F11 = Mod settings menu
+            if (Input.GetKeyDown(KeyCode.F11) &&
+                (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)))
+            {
+                DebugLogger.LogInput("Ctrl+F11", "ModSettings");
+                ModConfig.ToggleMenu();
+                return true;
+            }
+
+            // F1 = Help (always in Main)
+            if (Input.GetKeyDown(KeyCode.F1))
+            {
+                DebugLogger.LogInput("F1", "Help");
+                AnnounceHelp();
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Hotkeys that read game state. Only runs once CheckGameReady() is true.
+        /// Only dispatch to handlers here - don't put logic in Main!
+        /// </summary>
+        private bool ProcessGameHotkeys()
+        {
+            // Other F-keys dispatch to handlers:
+            // if (Input.GetKeyDown(KeyCode.F2))
+            // {
+            //     DebugLogger.LogInput("F2", "InventoryStatus");
+            //     _inventoryHandler.AnnounceStatus();
+            //     return true;
+            // }
+
+            // Tab = Navigate
+            // if (Input.GetKeyDown(KeyCode.Tab))
+            // {
+            //     int direction = Input.GetKey(KeyCode.LeftShift) ? -1 : 1;
+            //     DebugLogger.LogInput(direction > 0 ? "Tab" : "Shift+Tab", "Navigate");
+            //     _buttonNavigator.Navigate(direction);
+            //     return true;
+            // }
+
+            return false;
+        }
+
+        #endregion
+
+        #region Handler Updates
+
+        private void UpdateHandlers()
+        {
+            // Call Update() on all handlers that need per-frame checks
+            // _dialogHandler.Update();
+            // _inventoryHandler.Update();
+        }
+
+        #endregion
+
+        #region Help
+
+        private void AnnounceHelp()
+        {
+            // Localized: extend the "help_keys" entry in Loc.cs as you add hotkeys,
+            // so the help text stays translated (project rule: no raw spoken strings).
+            ScreenReader.Say(Loc.Get("help_keys"));
+        }
+
+        #endregion
+    }
+}

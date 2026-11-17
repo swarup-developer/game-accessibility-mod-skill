@@ -1,0 +1,4 @@
+interface:
+  display_name: "Accessibility Mod Development"
+  short_description: "Build and verify game access for blind players"
+  default_prompt: "Use $accessibility-mod-development to develop or improve an accessibility mod for my game."

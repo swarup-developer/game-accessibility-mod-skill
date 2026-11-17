@@ -1,0 +1,10 @@
+{
+  "feature": "Describe the requested observable behavior",
+  "stages": {
+    "implemented": {"status": "pending", "evidence": []},
+    "built": {"status": "pending", "evidence": []},
+    "installed": {"status": "pending", "evidence": []},
+    "runtime_observed": {"status": "pending", "evidence": []},
+    "screen_reader_confirmed": {"status": "pending", "evidence": []}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "checked_date": "2026-11-17",
+  "reuse": "Original summaries and links only; no article or third-party code reproduction.",
+  "sources": [
+    {"title": "BepInEx: Creating a new plugin project", "kind": "maintainer documentation", "url": "https://docs.bepinex.dev/master/articles/dev_guide/plugin_tutorial/2_plugin_start.html", "use": "Loader entry, metadata, references, deployment, and startup observation; match the installed runtime/version."},
+    {"title": "Stardew Valley / SMAPI modder guide: Get Started", "kind": "ecosystem modding guide", "url": "https://stardewvalleywiki.com/Modding:Modder_Guide/Get_Started", "use": "Manifest, mod entry, subscribed input events, world readiness, and game-specific build configuration."},
+    {"title": "Harmony: Patching edge cases", "kind": "maintainer documentation", "url": "https://harmony.pardeike.net/v2/articles/patching-edgecases.html", "use": "Inlining, generic sharing, initialization, and managed patch limits; not a blanket IL2CPP compatibility verdict."},
+    {"title": "Making One Piece TCG Accessible: The Technical Breakdown", "author": "Simon, &Adapt", "published": "2026-05-18", "kind": "creator technical postmortem", "url": "https://andadapt.com/making-one-piece-tcg-accessible-the-technical-breakdown/", "use": "Separate information and action access; recognize fragile positional/timing assumptions and incomplete playability."},
+    {"title": "Making One Piece TCG Accessible as a Blind Player: The Story", "author": "Simon, &Adapt", "published": "2026-05-18", "kind": "creator account", "url": "https://andadapt.com/making-one-piece-tcg-accessible-as-a-blind-player-the-story/", "use": "Player goals and the gap between narration and actual interaction."},
+    {"title": "Em dash, commas, full stops oh my", "author": "Simon, &Adapt", "published": "2026-05-22", "kind": "creator design post", "url": "https://andadapt.com/em-dash-commas-full-stops-oh-my/", "use": "Evaluate verbosity and listening speed with the actual reader/voice; no universal punctuation rule."}
+  ]
+}

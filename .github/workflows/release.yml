@@ -1,0 +1,33 @@
+name: Publish tagged release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/package.py validate
+      - shell: powershell
+        run: .\install.ps1 -Agent All -WhatIf
+      - run: python scripts/package.py build
+      - name: Upload release files
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $version = (Get-Content VERSION -Raw).Trim()
+          if ($env:GITHUB_REF_NAME -ne "v$version") { throw 'Tag and VERSION differ.' }
+          $files = @(Get-ChildItem dist/*.zip | ForEach-Object { $_.FullName }) + @((Resolve-Path dist/SHA256SUMS.txt).Path)
+          gh release view $env:GITHUB_REF_NAME *> $null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $env:GITHUB_REF_NAME @files --clobber
+          } else {
+            gh release create $env:GITHUB_REF_NAME @files --title "Game Accessibility Mod Skill $version" --notes-file RELEASE_NOTES.md --verify-tag
+          }
+          if ($LASTEXITCODE -ne 0) { throw 'Release upload failed.' }

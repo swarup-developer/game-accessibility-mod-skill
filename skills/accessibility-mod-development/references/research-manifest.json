@@ -1,0 +1,645 @@
+{
+  "research_date": "2026-11-17",
+  "scope": "Targeted GitHub source and primary API research; not a complete audit or runtime validation.",
+  "third_party_source_bundled": false,
+  "cited_sources": [
+    {
+      "id": "input-settings",
+      "repository": "Unity-Technologies/InputSystem",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "path": "Packages/com.unity.inputsystem/Documentation~/input-settings.md",
+      "source_blob_sha": "a08781a12b06fe4b4cecc8cdf2a6eaf932efd4ff",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/input-settings.md",
+      "evidence": "Routing to focus/background, update-mode, and supported-device settings."
+    },
+    {
+      "id": "input-lookups",
+      "repository": "Unity-Technologies/InputSystem",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "path": "Packages/com.unity.inputsystem/Documentation~/look-up-bindings.md",
+      "source_blob_sha": "d25c11b875286acf3c6f3a95547c2553ce2ebb0d",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/look-up-bindings.md",
+      "evidence": "Enumerating actual actions and bindings; example action names are not a target-game contract."
+    },
+    {
+      "id": "input-conflicts",
+      "repository": "Unity-Technologies/InputSystem",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "path": "Packages/com.unity.inputsystem/Documentation~/binding-conflicts.md",
+      "source_blob_sha": "bc9e96ddd8660749e23b6b122e27f484e861c6b4",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/binding-conflicts.md",
+      "evidence": "Action-type and map/asset limits of built-in shortcut conflict resolution."
+    },
+    {
+      "id": "input-rebinding",
+      "repository": "Unity-Technologies/InputSystem",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "path": "Packages/com.unity.inputsystem/Documentation~/interactive-rebinding.md",
+      "source_blob_sha": "3f126457c80ca9be56387bf1589d0910a74a77f8",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/interactive-rebinding.md",
+      "evidence": "Targeted capture, exclusions, cancellation, and disposal of rebinding operations."
+    },
+    {
+      "id": "input-persistence",
+      "repository": "Unity-Technologies/InputSystem",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "path": "Packages/com.unity.inputsystem/Documentation~/save-load-rebinds.md",
+      "source_blob_sha": "6bc8b55d64a70dd6e1fa8732fc917571e5d2bc49",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/save-load-rebinds.md",
+      "evidence": "Saving/restoring overrides; default restore behavior can remove other overrides."
+    },
+    {
+      "id": "input-display",
+      "repository": "Unity-Technologies/InputSystem",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "path": "Packages/com.unity.inputsystem/Documentation~/display-bindings.md",
+      "source_blob_sha": "d529883ca3c66f64224758d1b28e2f98fdb51b26",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/display-bindings.md",
+      "evidence": "Effective overrides and human-readable display strings; keyboard layout can change labels."
+    },
+    {
+      "id": "input-background",
+      "repository": "Unity-Technologies/InputSystem",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "path": "Packages/com.unity.inputsystem/Documentation~/background-behavior.md",
+      "source_blob_sha": "bd04108a3c3ba9db0c2b333f5944350f3ce10606",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/background-behavior.md",
+      "evidence": "Configurable focus-loss resets, cancellation, and background behavior."
+    },
+    {
+      "id": "input-rebind-sample",
+      "repository": "Unity-Technologies/InputSystem",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "path": "Assets/Samples/RebindingUI/RebindActionUI.cs",
+      "source_blob_sha": "9b581edd160393428b35871233dd628b40f3bf39",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Assets/Samples/RebindingUI/RebindActionUI.cs",
+      "evidence": "Official sample: saved enable state, targeted capture, action-map suppression, cancel/complete cleanup, disposal, and display refresh. Development APIs require target-version checks."
+    },
+    {
+      "id": "renpy-self-voicing",
+      "repository": "renpy/renpy",
+      "ref": "dd84698dbe32bcc646ff4fc42567b0790333348e",
+      "path": "sphinx/source/self_voicing.rst",
+      "source_blob_sha": "a721e2c3f9d017e9f3e63187a385f0063d2ff26c",
+      "source_url": "https://github.com/renpy/renpy/blob/dd84698dbe32bcc646ff4fc42567b0790333348e/sphinx/source/self_voicing.rst",
+      "evidence": "Self-voicing, alternate labels, distinct output modes; verify the shipped engine version."
+    },
+    {
+      "id": "renpy-accessibility-implementation",
+      "repository": "renpy/renpy",
+      "ref": "dd84698dbe32bcc646ff4fc42567b0790333348e",
+      "path": "renpy/common/00accessibility.rpy",
+      "source_blob_sha": "4d38dc70f675625333cce8ef7a2bc2133865d58c",
+      "source_url": "https://github.com/renpy/renpy/blob/dd84698dbe32bcc646ff4fc42567b0790333348e/renpy/common/00accessibility.rpy",
+      "evidence": "Conditional descriptive text and accessibility implementation; inspected relevant opening section."
+    },
+    {
+      "id": "godot-accessibility",
+      "repository": "godotengine/godot-docs",
+      "ref": "889adb4a3fa815e6efc4e3007e84454e96162b1f",
+      "path": "tutorials/ui/creating_applications.rst",
+      "source_blob_sha": "e6235c8c84c499f1980cc5222d5d429eda736fc4",
+      "source_url": "https://github.com/godotengine/godot-docs/blob/889adb4a3fa815e6efc4e3007e84454e96162b1f/tutorials/ui/creating_applications.rst",
+      "evidence": "Screen reader integration section; AccessKit, labels, configuration, and TTS distinction."
+    },
+    {
+      "id": "godot-focus",
+      "repository": "godotengine/godot-docs",
+      "ref": "889adb4a3fa815e6efc4e3007e84454e96162b1f",
+      "path": "tutorials/ui/gui_navigation.rst",
+      "source_blob_sha": "7a98bb2db1664eb2b176a1ec1cf84c3484bce16f",
+      "source_url": "https://github.com/godotengine/godot-docs/blob/889adb4a3fa815e6efc4e3007e84454e96162b1f/tutorials/ui/gui_navigation.rst",
+      "evidence": "Initial focus, explicit neighbors, UI action scope, and hidden-node focus."
+    },
+    {
+      "id": "godot-accessibility-api",
+      "repository": "godotengine/godot-docs",
+      "ref": "889adb4a3fa815e6efc4e3007e84454e96162b1f",
+      "path": "classes/class_accessibilityserver.rst",
+      "source_blob_sha": "a785c70265b9a7a3a9a93e1c032a0584f3833476",
+      "source_url": "https://github.com/godotengine/godot-docs/blob/889adb4a3fa815e6efc4e3007e84454e96162b1f/classes/class_accessibilityserver.rst",
+      "evidence": "AccessibilityServer interface; development documentation, not a target game's guaranteed API."
+    },
+    {
+      "id": "il2cpp-injection",
+      "repository": "BepInEx/Il2CppInterop",
+      "ref": "81a6f78c8b653e0da4a3420ac4cd00819e8b6292",
+      "path": "Documentation/Class-Injection.md",
+      "source_blob_sha": "c9d6dfc72c2819f69eeba86f51115ace1224564f",
+      "source_url": "https://github.com/BepInEx/Il2CppInterop/blob/81a6f78c8b653e0da4a3420ac4cd00819e8b6292/Documentation/Class-Injection.md",
+      "evidence": "Registration, construction, cross-domain lifetime, and reference-cycle caveats."
+    },
+    {
+      "id": "nvda-controller",
+      "repository": "nvaccess/nvda",
+      "ref": "25e8f022113df7251a022c9714c10407cfb0a702",
+      "path": "extras/controllerClient/readme.md",
+      "source_blob_sha": "d4788c6defde978b1d22ac1fc97776b68a70244a",
+      "source_url": "https://github.com/nvaccess/nvda/blob/25e8f022113df7251a022c9714c10407cfb0a702/extras/controllerClient/readme.md",
+      "evidence": "Status codes, architecture matching, and versioned controller interfaces."
+    },
+    {
+      "id": "nvda-controller-idl",
+      "repository": "nvaccess/nvda",
+      "ref": "25e8f022113df7251a022c9714c10407cfb0a702",
+      "path": "nvdaHelper/interfaces/nvdaController/nvdaController.idl",
+      "source_blob_sha": "462396950b552169bfc684392a7cf29743d65d08",
+      "source_url": "https://github.com/nvaccess/nvda/blob/25e8f022113df7251a022c9714c10407cfb0a702/nvdaHelper/interfaces/nvdaController/nvdaController.idl",
+      "evidence": "SSML asynchronous/synchronous behavior, mark callback conditions, and interface signatures."
+    },
+    {
+      "id": "nvda-managed-example",
+      "repository": "nvaccess/nvda",
+      "ref": "25e8f022113df7251a022c9714c10407cfb0a702",
+      "path": "extras/controllerClient/examples/example_csharp/NVDA.cs",
+      "source_blob_sha": "d00a5da8603ce23fe5c3abc3c346cbe92f15adf3",
+      "source_url": "https://github.com/nvaccess/nvda/blob/25e8f022113df7251a022c9714c10407cfb0a702/extras/controllerClient/examples/example_csharp/NVDA.cs",
+      "evidence": "Native imports and error propagation; example code, not a complete lifetime guarantee."
+    },
+    {
+      "id": "prism-header",
+      "repository": "ethindp/prism",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "path": "include/prism.h",
+      "source_blob_sha": "26abaad229ba3ccb622563fe5eed0b9316487f2b",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/include/prism.h",
+      "evidence": "Calling convention, configuration declarations, ownership-related interface symbols."
+    },
+    {
+      "id": "prism-backends",
+      "repository": "ethindp/prism",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "path": "doc/src/api/c/backend-functions.md",
+      "source_blob_sha": "72453243f5381df34734c02040b09b786ab0b0cb",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/doc/src/api/c/backend-functions.md",
+      "evidence": "Feature flags, advisory availability, backend disposal, and UTF-8 contracts."
+    },
+    {
+      "id": "prism-threading",
+      "repository": "ethindp/prism",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "path": "doc/src/api/c/thread-safety.md",
+      "source_blob_sha": "6641bafc61f75907952a5888e95be3cbcc988c2a",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/doc/src/api/c/thread-safety.md",
+      "evidence": "Shared instance serialization, registry behavior, callback threads, and shutdown races."
+    },
+    {
+      "id": "prism-conventions",
+      "repository": "ethindp/prism",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "path": "doc/src/api/c/conventions.md",
+      "source_blob_sha": "6c12fc6494b8a4a78717dd846d7702925f50e8b7",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/doc/src/api/c/conventions.md",
+      "evidence": "Return values, nullability, pointer ownership, and data lifetime."
+    },
+    {
+      "id": "prism-context",
+      "repository": "ethindp/prism",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "path": "doc/src/api/c/context-management.md",
+      "source_blob_sha": "0adf7e6a4d6b92264a0125648f1aad4c30a34928",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/doc/src/api/c/context-management.md",
+      "evidence": "Versioned config, default initialization, independent context/backend lifetime."
+    },
+    {
+      "id": "spire-speech",
+      "repository": "bradjrenshaw/say-the-spire2",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "path": "Speech/SpeechManager.cs",
+      "source_blob_sha": "3696904c791a3852abe563e6184112f742089ed6",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Speech/SpeechManager.cs",
+      "evidence": "Backend selection, unload, override, and dispatch profiling."
+    },
+    {
+      "id": "spire-focus",
+      "repository": "bradjrenshaw/say-the-spire2",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "path": "UI/FocusContext.cs",
+      "source_blob_sha": "4ff5ce0da1383c81f5d4563a405225f3686608b2",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/UI/FocusContext.cs",
+      "evidence": "Container-path divergence and reset for changed-context announcements."
+    },
+    {
+      "id": "spire-events",
+      "repository": "bradjrenshaw/say-the-spire2",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "path": "Events/EventDispatcher.cs",
+      "source_blob_sha": "944e2037c0c73753549280aac7551644412d9336",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Events/EventDispatcher.cs",
+      "evidence": "Separate source filtering, automatic speech, event-buffer insertion, and ordering."
+    },
+    {
+      "id": "spire-buffer",
+      "repository": "bradjrenshaw/say-the-spire2",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "path": "Buffers/Buffer.cs",
+      "source_blob_sha": "d5ce7e83e09800b7dada3ed3cd69a3de1a82ee8a",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Buffers/Buffer.cs",
+      "evidence": "Review cursor, optional follow-latest, repopulation, and clearing live bindings."
+    },
+    {
+      "id": "spire-message-tests",
+      "repository": "bradjrenshaw/say-the-spire2",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "path": "Tests/MessageTests.cs",
+      "source_blob_sha": "95ad0b2ee6762e19a8ebe3d637d7071c96c842a8",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Tests/MessageTests.cs",
+      "evidence": "Markup/icon conversion, substitutions, missing localization, and independent tests."
+    },
+    {
+      "id": "spire-event-tests",
+      "repository": "bradjrenshaw/say-the-spire2",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "path": "Tests/EventRegistryTests.cs",
+      "source_blob_sha": "e4989d4f60458bd7ae24670326c07558178f29ed",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Tests/EventRegistryTests.cs",
+      "evidence": "Event descriptors and distinct announce/buffer settings."
+    },
+    {
+      "id": "spire-map",
+      "repository": "bradjrenshaw/say-the-spire2",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "path": "Map/MapReachability.cs",
+      "source_blob_sha": "25e098cd37d0aec056543dc874128fa13470c442",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Map/MapReachability.cs",
+      "evidence": "Graph traversal and modifiers; documented approximations are not portable game rules."
+    },
+    {
+      "id": "spire-input",
+      "repository": "bradjrenshaw/say-the-spire2",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "path": "Input/InputManager.cs",
+      "source_blob_sha": "3fd0731c6336611aecdff6af4e9c7edbe87ebcb0",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Input/InputManager.cs",
+      "evidence": "Input action inventory, rebind capture, held-button snapshot, and game-specific interception."
+    },
+    {
+      "id": "spire-controller",
+      "repository": "bradjrenshaw/say-the-spire2",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "path": "Input/ControllerInput.cs",
+      "source_blob_sha": "c6d16550452dbfe1664b56f2ab6bea047ddca78f",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Input/ControllerInput.cs",
+      "evidence": "Named controller actions; inventory alone is not evidence of hotplug/rebind correctness."
+    },
+    {
+      "id": "stardew-features",
+      "repository": "stardew-access/stardew-access",
+      "ref": "c3568b659783975cd25f2385853a48ec15911e9c",
+      "path": "docs/features.md",
+      "source_blob_sha": "45a1941661114c050e7844bd21b0ed174b627c1a",
+      "source_url": "https://github.com/stardew-access/stardew-access/blob/c3568b659783975cd25f2385853a48ec15911e9c/docs/features.md",
+      "evidence": "Documented narration, inspection/travel distinctions, interruption settings, and limitations."
+    },
+    {
+      "id": "stardew-speech",
+      "repository": "stardew-access/stardew-access",
+      "ref": "c3568b659783975cd25f2385853a48ec15911e9c",
+      "path": "stardew-access/ScreenReader/ScreenReaderImpl.cs",
+      "source_blob_sha": "9ab746bc5bdcd7e3680235200d7a8115c6c8a4cb",
+      "source_url": "https://github.com/stardew-access/stardew-access/blob/c3568b659783975cd25f2385853a48ec15911e9c/stardew-access/ScreenReader/ScreenReaderImpl.cs",
+      "evidence": "Separate menu/tile/chat comparisons and speech history; implementation tradeoffs require review."
+    },
+    {
+      "id": "stardew-radar",
+      "repository": "stardew-access/stardew-access",
+      "ref": "c3568b659783975cd25f2385853a48ec15911e9c",
+      "path": "stardew-access/Features/Radar.cs",
+      "source_blob_sha": "ae3da0ccd9c6fcd3e146fbbdead8a77f7f448753",
+      "source_url": "https://github.com/stardew-access/stardew-access/blob/c3568b659783975cd25f2385853a48ec15911e9c/stardew-access/Features/Radar.cs",
+      "evidence": "Category-filtered scanning and directional sound cues; not route reachability."
+    },
+    {
+      "id": "stardew-pathfinder",
+      "repository": "stardew-access/stardew-access",
+      "ref": "c3568b659783975cd25f2385853a48ec15911e9c",
+      "path": "stardew-access/Utils/Pathfinder.cs",
+      "source_blob_sha": "c63859b0bff36348d08cebf6ca69fba5e73209ee",
+      "source_url": "https://github.com/stardew-access/stardew-access/blob/c3568b659783975cd25f2385853a48ec15911e9c/stardew-access/Utils/Pathfinder.cs",
+      "evidence": "Game path controller, cancellation, timers, and retry logic as an example to review critically."
+    },
+    {
+      "id": "ats-map",
+      "repository": "rashadnaqeeb/ats-accessibility-mod",
+      "ref": "983f35a62d4ede63ca03a88901e69ca235693607",
+      "path": "ATSAccessibility/Handlers/MapNavigator.cs",
+      "source_blob_sha": "0d5966cb94cc906f54f871585eafe9921e414a79",
+      "source_url": "https://github.com/rashadnaqeeb/ats-accessibility-mod/blob/983f35a62d4ede63ca03a88901e69ca235693607/ATSAccessibility/Handlers/MapNavigator.cs",
+      "evidence": "Virtual cursor, game bounds, origin-relative coordinates, and context reset."
+    },
+    {
+      "id": "ats-input",
+      "repository": "rashadnaqeeb/ats-accessibility-mod",
+      "ref": "983f35a62d4ede63ca03a88901e69ca235693607",
+      "path": "ATSAccessibility/Core/InputBlocker.cs",
+      "source_blob_sha": "e329c7c93848cb4818ff52eda8e96b549120b0f8",
+      "source_url": "https://github.com/rashadnaqeeb/ats-accessibility-mod/blob/983f35a62d4ede63ca03a88901e69ca235693607/ATSAccessibility/Core/InputBlocker.cs",
+      "evidence": "Game-specific action whitelist, text-entry caveat, and one-shot cancel handling."
+    },
+    {
+      "id": "ats-speech",
+      "repository": "rashadnaqeeb/ats-accessibility-mod",
+      "ref": "983f35a62d4ede63ca03a88901e69ca235693607",
+      "path": "ATSAccessibility/Utils/Speech.cs",
+      "source_blob_sha": "8beedc0a0a0753978f4b8effdff1307a9ba61b34",
+      "source_url": "https://github.com/rashadnaqeeb/ats-accessibility-mod/blob/983f35a62d4ede63ca03a88901e69ca235693607/ATSAccessibility/Utils/Speech.cs",
+      "evidence": "Version-specific UTF-8 bindings, backend ownership, and markup conversion; not a universal binding."
+    }
+  ],
+  "inspected_files": [
+    {
+      "repo": "Unity-Technologies/InputSystem",
+      "path": "Packages/com.unity.inputsystem/Documentation~/input-settings.md",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "blob": "a08781a12b06fe4b4cecc8cdf2a6eaf932efd4ff",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/input-settings.md"
+    },
+    {
+      "repo": "Unity-Technologies/InputSystem",
+      "path": "Packages/com.unity.inputsystem/Documentation~/look-up-bindings.md",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "blob": "d25c11b875286acf3c6f3a95547c2553ce2ebb0d",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/look-up-bindings.md"
+    },
+    {
+      "repo": "Unity-Technologies/InputSystem",
+      "path": "Packages/com.unity.inputsystem/Documentation~/binding-conflicts.md",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "blob": "bc9e96ddd8660749e23b6b122e27f484e861c6b4",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/binding-conflicts.md"
+    },
+    {
+      "repo": "Unity-Technologies/InputSystem",
+      "path": "Packages/com.unity.inputsystem/Documentation~/interactive-rebinding.md",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "blob": "3f126457c80ca9be56387bf1589d0910a74a77f8",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/interactive-rebinding.md"
+    },
+    {
+      "repo": "Unity-Technologies/InputSystem",
+      "path": "Packages/com.unity.inputsystem/Documentation~/save-load-rebinds.md",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "blob": "6bc8b55d64a70dd6e1fa8732fc917571e5d2bc49",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/save-load-rebinds.md"
+    },
+    {
+      "repo": "Unity-Technologies/InputSystem",
+      "path": "Packages/com.unity.inputsystem/Documentation~/display-bindings.md",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "blob": "d529883ca3c66f64224758d1b28e2f98fdb51b26",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/display-bindings.md"
+    },
+    {
+      "repo": "Unity-Technologies/InputSystem",
+      "path": "Packages/com.unity.inputsystem/Documentation~/background-behavior.md",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "blob": "bd04108a3c3ba9db0c2b333f5944350f3ce10606",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Packages/com.unity.inputsystem/Documentation~/background-behavior.md"
+    },
+    {
+      "repo": "Unity-Technologies/InputSystem",
+      "path": "Assets/Samples/RebindingUI/RebindActionUI.cs",
+      "ref": "6cb24c08607bfb90b8b688239c5fb0049cc089b8",
+      "blob": "9b581edd160393428b35871233dd628b40f3bf39",
+      "source_url": "https://github.com/Unity-Technologies/InputSystem/blob/6cb24c08607bfb90b8b688239c5fb0049cc089b8/Assets/Samples/RebindingUI/RebindActionUI.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Speech/SpeechManager.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "3696904c791a3852abe563e6184112f742089ed6",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Speech/SpeechManager.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "UI/FocusContext.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "4ff5ce0da1383c81f5d4563a405225f3686608b2",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/UI/FocusContext.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "README.md",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "f464bde523dce16ab05b9c40e7d8f5ab6be39494",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/README.md"
+    },
+    {
+      "repo": "stardew-access/stardew-access",
+      "path": "stardew-access/Features/Radar.cs",
+      "ref": "c3568b659783975cd25f2385853a48ec15911e9c",
+      "blob": "ae3da0ccd9c6fcd3e146fbbdead8a77f7f448753",
+      "source_url": "https://github.com/stardew-access/stardew-access/blob/c3568b659783975cd25f2385853a48ec15911e9c/stardew-access/Features/Radar.cs"
+    },
+    {
+      "repo": "BepInEx/Il2CppInterop",
+      "path": "Documentation/Common-Problems.md",
+      "ref": "81a6f78c8b653e0da4a3420ac4cd00819e8b6292",
+      "blob": "9d9dd773dbca2a9fd98766e438f2532e0efceb11",
+      "source_url": "https://github.com/BepInEx/Il2CppInterop/blob/81a6f78c8b653e0da4a3420ac4cd00819e8b6292/Documentation/Common-Problems.md"
+    },
+    {
+      "repo": "stardew-access/stardew-access",
+      "path": "stardew-access/Utils/Pathfinder.cs",
+      "ref": "c3568b659783975cd25f2385853a48ec15911e9c",
+      "blob": "c63859b0bff36348d08cebf6ca69fba5e73209ee",
+      "source_url": "https://github.com/stardew-access/stardew-access/blob/c3568b659783975cd25f2385853a48ec15911e9c/stardew-access/Utils/Pathfinder.cs"
+    },
+    {
+      "repo": "BepInEx/Il2CppInterop",
+      "path": "Documentation/Class-Injection.md",
+      "ref": "81a6f78c8b653e0da4a3420ac4cd00819e8b6292",
+      "blob": "c9d6dfc72c2819f69eeba86f51115ace1224564f",
+      "source_url": "https://github.com/BepInEx/Il2CppInterop/blob/81a6f78c8b653e0da4a3420ac4cd00819e8b6292/Documentation/Class-Injection.md"
+    },
+    {
+      "repo": "stardew-access/stardew-access",
+      "path": "stardew-access/ScreenReader/ScreenReaderImpl.cs",
+      "ref": "c3568b659783975cd25f2385853a48ec15911e9c",
+      "blob": "9ab746bc5bdcd7e3680235200d7a8115c6c8a4cb",
+      "source_url": "https://github.com/stardew-access/stardew-access/blob/c3568b659783975cd25f2385853a48ec15911e9c/stardew-access/ScreenReader/ScreenReaderImpl.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Tests/EventRegistryTests.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "e4989d4f60458bd7ae24670326c07558178f29ed",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Tests/EventRegistryTests.cs"
+    },
+    {
+      "repo": "rashadnaqeeb/ats-accessibility-mod",
+      "path": "ATSAccessibility/Handlers/MapNavigator.cs",
+      "ref": "983f35a62d4ede63ca03a88901e69ca235693607",
+      "blob": "0d5966cb94cc906f54f871585eafe9921e414a79",
+      "source_url": "https://github.com/rashadnaqeeb/ats-accessibility-mod/blob/983f35a62d4ede63ca03a88901e69ca235693607/ATSAccessibility/Handlers/MapNavigator.cs"
+    },
+    {
+      "repo": "rashadnaqeeb/ats-accessibility-mod",
+      "path": "ATSAccessibility/Utils/Speech.cs",
+      "ref": "983f35a62d4ede63ca03a88901e69ca235693607",
+      "blob": "8beedc0a0a0753978f4b8effdff1307a9ba61b34",
+      "source_url": "https://github.com/rashadnaqeeb/ats-accessibility-mod/blob/983f35a62d4ede63ca03a88901e69ca235693607/ATSAccessibility/Utils/Speech.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Tests/MessageTests.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "95ad0b2ee6762e19a8ebe3d637d7071c96c842a8",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Tests/MessageTests.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Speech/PrismHandler.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "d75f17306446acf9da4992d6f1a5b0eec1aac140",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Speech/PrismHandler.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Events/EventDispatcher.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "944e2037c0c73753549280aac7551644412d9336",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Events/EventDispatcher.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Speech/PrismNative.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "0ab6cdbf11c98161524b4ccb378624c93cb08232",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Speech/PrismNative.cs"
+    },
+    {
+      "repo": "stardew-access/stardew-access",
+      "path": "docs/features.md",
+      "ref": "c3568b659783975cd25f2385853a48ec15911e9c",
+      "blob": "45a1941661114c050e7844bd21b0ed174b627c1a",
+      "source_url": "https://github.com/stardew-access/stardew-access/blob/c3568b659783975cd25f2385853a48ec15911e9c/docs/features.md"
+    },
+    {
+      "repo": "rashadnaqeeb/ats-accessibility-mod",
+      "path": "ATSAccessibility/Core/InputBlocker.cs",
+      "ref": "983f35a62d4ede63ca03a88901e69ca235693607",
+      "blob": "e329c7c93848cb4818ff52eda8e96b549120b0f8",
+      "source_url": "https://github.com/rashadnaqeeb/ats-accessibility-mod/blob/983f35a62d4ede63ca03a88901e69ca235693607/ATSAccessibility/Core/InputBlocker.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Map/MapReachability.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "25e098cd37d0aec056543dc874128fa13470c442",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Map/MapReachability.cs"
+    },
+    {
+      "repo": "godotengine/godot-docs",
+      "path": "classes/class_accessibilityserver.rst",
+      "ref": "889adb4a3fa815e6efc4e3007e84454e96162b1f",
+      "blob": "a785c70265b9a7a3a9a93e1c032a0584f3833476",
+      "source_url": "https://github.com/godotengine/godot-docs/blob/889adb4a3fa815e6efc4e3007e84454e96162b1f/classes/class_accessibilityserver.rst"
+    },
+    {
+      "repo": "godotengine/godot-docs",
+      "path": "tutorials/ui/gui_navigation.rst",
+      "ref": "889adb4a3fa815e6efc4e3007e84454e96162b1f",
+      "blob": "7a98bb2db1664eb2b176a1ec1cf84c3484bce16f",
+      "source_url": "https://github.com/godotengine/godot-docs/blob/889adb4a3fa815e6efc4e3007e84454e96162b1f/tutorials/ui/gui_navigation.rst"
+    },
+    {
+      "repo": "renpy/renpy",
+      "path": "sphinx/source/self_voicing.rst",
+      "ref": "dd84698dbe32bcc646ff4fc42567b0790333348e",
+      "blob": "a721e2c3f9d017e9f3e63187a385f0063d2ff26c",
+      "source_url": "https://github.com/renpy/renpy/blob/dd84698dbe32bcc646ff4fc42567b0790333348e/sphinx/source/self_voicing.rst"
+    },
+    {
+      "repo": "renpy/renpy",
+      "path": "renpy/common/00accessibility.rpy",
+      "ref": "dd84698dbe32bcc646ff4fc42567b0790333348e",
+      "blob": "4d38dc70f675625333cce8ef7a2bc2133865d58c",
+      "source_url": "https://github.com/renpy/renpy/blob/dd84698dbe32bcc646ff4fc42567b0790333348e/renpy/common/00accessibility.rpy"
+    },
+    {
+      "repo": "nvaccess/nvda",
+      "path": "extras/controllerClient/readme.md",
+      "ref": "25e8f022113df7251a022c9714c10407cfb0a702",
+      "blob": "d4788c6defde978b1d22ac1fc97776b68a70244a",
+      "source_url": "https://github.com/nvaccess/nvda/blob/25e8f022113df7251a022c9714c10407cfb0a702/extras/controllerClient/readme.md"
+    },
+    {
+      "repo": "nvaccess/nvda",
+      "path": "extras/controllerClient/examples/example_csharp/NVDA.cs",
+      "ref": "25e8f022113df7251a022c9714c10407cfb0a702",
+      "blob": "d00a5da8603ce23fe5c3abc3c346cbe92f15adf3",
+      "source_url": "https://github.com/nvaccess/nvda/blob/25e8f022113df7251a022c9714c10407cfb0a702/extras/controllerClient/examples/example_csharp/NVDA.cs"
+    },
+    {
+      "repo": "nvaccess/nvda",
+      "path": "nvdaHelper/interfaces/nvdaController/nvdaController.idl",
+      "ref": "25e8f022113df7251a022c9714c10407cfb0a702",
+      "blob": "462396950b552169bfc684392a7cf29743d65d08",
+      "source_url": "https://github.com/nvaccess/nvda/blob/25e8f022113df7251a022c9714c10407cfb0a702/nvdaHelper/interfaces/nvdaController/nvdaController.idl"
+    },
+    {
+      "repo": "godotengine/godot-docs",
+      "path": "tutorials/ui/creating_applications.rst",
+      "ref": "889adb4a3fa815e6efc4e3007e84454e96162b1f",
+      "blob": "e6235c8c84c499f1980cc5222d5d429eda736fc4",
+      "source_url": "https://github.com/godotengine/godot-docs/blob/889adb4a3fa815e6efc4e3007e84454e96162b1f/tutorials/ui/creating_applications.rst"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Buffers/Buffer.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "d5ce7e83e09800b7dada3ed3cd69a3de1a82ee8a",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Buffers/Buffer.cs"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Input/ControllerInput.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "c6d16550452dbfe1664b56f2ab6bea047ddca78f",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Input/ControllerInput.cs"
+    },
+    {
+      "repo": "ethindp/prism",
+      "path": "doc/src/api/c/context-management.md",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "blob": "0adf7e6a4d6b92264a0125648f1aad4c30a34928",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/doc/src/api/c/context-management.md"
+    },
+    {
+      "repo": "ethindp/prism",
+      "path": "doc/src/api/c/thread-safety.md",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "blob": "6641bafc61f75907952a5888e95be3cbcc988c2a",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/doc/src/api/c/thread-safety.md"
+    },
+    {
+      "repo": "ethindp/prism",
+      "path": "include/prism.h",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "blob": "26abaad229ba3ccb622563fe5eed0b9316487f2b",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/include/prism.h"
+    },
+    {
+      "repo": "ethindp/prism",
+      "path": "doc/src/api/c/backend-functions.md",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "blob": "72453243f5381df34734c02040b09b786ab0b0cb",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/doc/src/api/c/backend-functions.md"
+    },
+    {
+      "repo": "ethindp/prism",
+      "path": "doc/src/api/c/conventions.md",
+      "ref": "2819206318c3e9040f5f5bae840ddff9a40294fb",
+      "blob": "6c12fc6494b8a4a78717dd846d7702925f50e8b7",
+      "source_url": "https://github.com/ethindp/prism/blob/2819206318c3e9040f5f5bae840ddff9a40294fb/doc/src/api/c/conventions.md"
+    },
+    {
+      "repo": "bradjrenshaw/say-the-spire2",
+      "path": "Input/InputManager.cs",
+      "ref": "237df52ac8f807ecadc25ef61c9b31d00ec95ee2",
+      "blob": "3fd0731c6336611aecdff6af4e9c7edbe87ebcb0",
+      "source_url": "https://github.com/bradjrenshaw/say-the-spire2/blob/237df52ac8f807ecadc25ef61c9b31d00ec95ee2/Input/InputManager.cs"
+    }
+  ]
+}

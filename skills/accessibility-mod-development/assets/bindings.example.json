@@ -1,0 +1,6 @@
+{
+  "game_version": "Record the inspected game build here",
+  "bindings": [
+    {"action": "Read current objective", "key": null, "contexts": ["gameplay"], "status": "candidate", "evidence": []}
+  ]
+}

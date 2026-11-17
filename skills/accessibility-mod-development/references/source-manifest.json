@@ -1,0 +1,420 @@
+{
+  "checked_date": "2026-11-17",
+  "snapshot_policy": "Pinned GitHub references; current local working copies stored separately. Snapshot file hashes are recorded in inventory.json.",
+  "github_files": [
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/AGENTS.md",
+      "source_blob_sha": "e5593d238e7cfb1ae23f8d75e4146a0beedc5450",
+      "bundled_path": "references/template/project-instructions.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/AGENTS.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/CLAUDE.de.md",
+      "source_blob_sha": "b57bb487be811edf83ec7791b6632edfea5f1c27",
+      "bundled_path": "references/template/project-instructions.de.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/CLAUDE.de.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs-de/setup-guide.md",
+      "source_blob_sha": "648d5e150ae9cbcbf630b05f87e4875240a22136",
+      "bundled_path": "references/template/docs-de/setup-guide.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs-de/setup-guide.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs-de/technical-reference.md",
+      "source_blob_sha": "a39f792a6b1f8c1effe5cf0d91f222343a4e33f3",
+      "bundled_path": "references/template/docs-de/technical-reference.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs-de/technical-reference.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/ACCESSIBILITY_MODDING_GUIDE.md",
+      "source_blob_sha": "15374d33d5637bd1fe946b1247bcbf074faacb16",
+      "bundled_path": "references/template/docs/ACCESSIBILITY_MODDING_GUIDE.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/ACCESSIBILITY_MODDING_GUIDE.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/distribution-guide.md",
+      "source_blob_sha": "8212ef6d1e1905f49956f473b681fae64dc79164",
+      "bundled_path": "references/template/docs/distribution-guide.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/distribution-guide.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/external-references/book-of-accessibility-modding.md",
+      "source_blob_sha": "c5a54611809c1067a22e74e41a70ab904483db47",
+      "bundled_path": "references/template/docs/external-references/book-of-accessibility-modding.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/external-references/book-of-accessibility-modding.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/git-github-guide.md",
+      "source_blob_sha": "e88f67225d6574f06adea2e659adef1dda044278",
+      "bundled_path": "references/template/docs/git-github-guide.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/git-github-guide.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/known-issues.md",
+      "source_blob_sha": "8d308b2c498b0838d641ed8a501846c65e349a14",
+      "bundled_path": "references/template/docs/known-issues.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/known-issues.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/legacy-unity-modding.md",
+      "source_blob_sha": "4577d110897ad5dd55ffd8ee183ef121ab16f639",
+      "bundled_path": "references/template/docs/legacy-unity-modding.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/legacy-unity-modding.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/localization-guide.md",
+      "source_blob_sha": "1b805ee21c34c712ba1cbddab9e5e261445f8740",
+      "bundled_path": "references/template/docs/localization-guide.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/localization-guide.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/menu-accessibility-checklist.md",
+      "source_blob_sha": "26f21be7ebfb4f3196aff96687c441a66b5959c9",
+      "bundled_path": "references/template/docs/menu-accessibility-checklist.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/menu-accessibility-checklist.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/menu-accessibility-patterns.md",
+      "source_blob_sha": "2afdcf96d78a44746049c606b16fa25165c0e771",
+      "bundled_path": "references/template/docs/menu-accessibility-patterns.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/menu-accessibility-patterns.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/setup-guide.md",
+      "source_blob_sha": "e194bb1cac9d0cbacb02c00266aab26453a60e62",
+      "bundled_path": "references/template/docs/setup-guide.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/setup-guide.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/state-management-guide.md",
+      "source_blob_sha": "1685f945735c6c43a548bfdd6a87d4d8bd84397e",
+      "bundled_path": "references/template/docs/state-management-guide.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/state-management-guide.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/technical-reference.md",
+      "source_blob_sha": "07a7f33ce556e46a74a73cb2390c0e383ab3f8cf",
+      "bundled_path": "references/template/docs/technical-reference.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/technical-reference.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/docs/unity-reflection-guide.md",
+      "source_blob_sha": "35c0c2401f049210d2070508aaaf837568257d4a",
+      "bundled_path": "references/template/docs/unity-reflection-guide.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/docs/unity-reflection-guide.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/scripts/Get-MelonLoaderInfo.ps1",
+      "source_blob_sha": "58c486aa9e1d310c0ce292537704f9ba6506cfa1",
+      "bundled_path": "assets/template/scripts/Get-MelonLoaderInfo.ps1",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/scripts/Get-MelonLoaderInfo.ps1"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/scripts/Install-GitHooks.ps1",
+      "source_blob_sha": "f1397af6757d6aba65b24df545b1ead673966cea",
+      "bundled_path": "assets/template/scripts/Install-GitHooks.ps1",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/scripts/Install-GitHooks.ps1"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/scripts/Test-ModSetup.ps1",
+      "source_blob_sha": "01c0eada3706f44e6ca94cdd475b922fb30d2210",
+      "bundled_path": "assets/template/scripts/Test-ModSetup.ps1",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/scripts/Test-ModSetup.ps1"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/scripts/hooks/pre-commit",
+      "source_blob_sha": "e9879d52c801cd5ec06d6b5125a5eee7205bb88d",
+      "bundled_path": "assets/template/scripts/hooks/pre-commit",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/scripts/hooks/pre-commit"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/bepinex/DebugLogger.cs.template",
+      "source_blob_sha": "920ad033fea7ac8b670cbe1c210313bd6f3dd8ac",
+      "bundled_path": "assets/template/templates/bepinex/DebugLogger.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/bepinex/DebugLogger.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/bepinex/Main.cs.template",
+      "source_blob_sha": "499492f873d481ace09aacba295e9d1ecd495a69",
+      "bundled_path": "assets/template/templates/bepinex/Main.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/bepinex/Main.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/bepinex/ModConfig.cs.template",
+      "source_blob_sha": "205a91703c5d9818193edec1fe74544d13cdaa23",
+      "bundled_path": "assets/template/templates/bepinex/ModConfig.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/bepinex/ModConfig.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/bepinex/ScreenReader.cs.template",
+      "source_blob_sha": "3640877804e54cc75f6bdfa49d63983cc2b0bbd7",
+      "bundled_path": "assets/template/templates/bepinex/ScreenReader.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/bepinex/ScreenReader.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/bepinex/csproj.template",
+      "source_blob_sha": "e77ea7a5c3ddc0ef7b15d4c363a86f8b9f707276",
+      "bundled_path": "assets/template/templates/bepinex/csproj.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/bepinex/csproj.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/melonloader/DebugLogger.cs.template",
+      "source_blob_sha": "48a662df298293e2b513e0e8d5470b395e81651c",
+      "bundled_path": "assets/template/templates/melonloader/DebugLogger.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/melonloader/DebugLogger.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/melonloader/Main.cs.template",
+      "source_blob_sha": "ee020074f53f8c99aeee9ca1748d0d4d03f1adf7",
+      "bundled_path": "assets/template/templates/melonloader/Main.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/melonloader/Main.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/melonloader/ModConfig.cs.template",
+      "source_blob_sha": "904f1590b9619fe4fd4a5b46181a1348dc36b0d6",
+      "bundled_path": "assets/template/templates/melonloader/ModConfig.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/melonloader/ModConfig.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/melonloader/ScreenReader.cs.template",
+      "source_blob_sha": "c0d9b48616adba40909614f7035f38122f032d76",
+      "bundled_path": "assets/template/templates/melonloader/ScreenReader.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/melonloader/ScreenReader.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/melonloader/csproj.template",
+      "source_blob_sha": "5a24227f7f14a0ba2d0ad786961c864106d99cf7",
+      "bundled_path": "assets/template/templates/melonloader/csproj.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/melonloader/csproj.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/shared/AccessStateManager.cs.template",
+      "source_blob_sha": "78d5447fe3e4d996214956bc6a89d8763497ab1b",
+      "bundled_path": "assets/template/templates/shared/AccessStateManager.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/shared/AccessStateManager.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/shared/Handler.cs.template",
+      "source_blob_sha": "545978874da1c3e5fb490935c4562ce6957a4c0e",
+      "bundled_path": "assets/template/templates/shared/Handler.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/shared/Handler.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/shared/Loc.cs.template",
+      "source_blob_sha": "ff0b9c69a8daf21bd3837bd6b2ceaf513922b254",
+      "bundled_path": "assets/template/templates/shared/Loc.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/shared/Loc.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/shared/ReflectionHelper.cs.template",
+      "source_blob_sha": "ccf3d7b5a5a0d2b15f22c58d8b5017dcbc6bf666",
+      "bundled_path": "assets/template/templates/shared/ReflectionHelper.cs.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/shared/ReflectionHelper.cs.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/shared/game-api.md.template",
+      "source_blob_sha": "8567cab156a0a82148bfe08f644b6be9e9c22278",
+      "bundled_path": "assets/template/templates/shared/game-api.md.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/shared/game-api.md.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "Accessibility-Mod-Template/templates/shared/project_status.md.template",
+      "source_blob_sha": "472183f3ef619393bec9e98e292471708c663951",
+      "bundled_path": "assets/template/templates/shared/project_status.md.template",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/Accessibility-Mod-Template/templates/shared/project_status.md.template"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "CHANGELOG.md",
+      "source_blob_sha": "c5e54ae1c6262003acd512b7c8e91371a0fc590a",
+      "bundled_path": "references/template/CHANGELOG.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/CHANGELOG.md"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "CONTRIBUTING",
+      "source_blob_sha": "7656f29d3f0ffea422b721c4feb6bae8558c444a",
+      "bundled_path": "references/template/CONTRIBUTING",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/CONTRIBUTING"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "LICENSE",
+      "source_blob_sha": "b2bb847af8ee41cf13d1fef9c4b2f707f9a00bfd",
+      "bundled_path": "references/template/LICENSE",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/LICENSE"
+    },
+    {
+      "repository": "VIPPotato/Accessibility-mod-template-Codex-edition",
+      "commit": "920da60f33b88addf3e665be5b1aab9f1a94a0e5",
+      "source_path": "README.md",
+      "source_blob_sha": "595fae59e681aaad401cdca679e4051933b71157",
+      "bundled_path": "references/template/README.md",
+      "source_url": "https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition/blob/920da60f33b88addf3e665be5b1aab9f1a94a0e5/README.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/CLAUDE.md",
+      "source_blob_sha": "130217def2daa0634ad49ceb71ed2b34dbdf2e55",
+      "bundled_path": "references/upstream/project-instructions.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/CLAUDE.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/docs-de/localization-guide.md",
+      "source_blob_sha": "bbfc195a3bc93fed74fe95bc6bf0af37607b0a6a",
+      "bundled_path": "references/upstream/docs-de/localization-guide.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/docs-de/localization-guide.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/docs-de/menu-accessibility-checklist.md",
+      "source_blob_sha": "6893bf50b46d9e936f3278eb739a28dfa9ea966c",
+      "bundled_path": "references/upstream/docs-de/menu-accessibility-checklist.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/docs-de/menu-accessibility-checklist.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/docs-de/setup-guide.md",
+      "source_blob_sha": "8d853fa228a26c294bf87fac97111a25825303e0",
+      "bundled_path": "references/upstream/docs-de/setup-guide.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/docs-de/setup-guide.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/docs/ACCESSIBILITY_MODDING_GUIDE.md",
+      "source_blob_sha": "14d30d6ee86393b3de8018a5cb518e9d3431dc9e",
+      "bundled_path": "references/upstream/docs/ACCESSIBILITY_MODDING_GUIDE.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/docs/ACCESSIBILITY_MODDING_GUIDE.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/docs/external-references/book-of-accessibility-modding.md",
+      "source_blob_sha": "7f4d9a1c6ecac8cb6feaa30e73230bf12370b857",
+      "bundled_path": "references/upstream/docs/external-references/book-of-accessibility-modding.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/docs/external-references/book-of-accessibility-modding.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/docs/git-github-guide.md",
+      "source_blob_sha": "0465e00bc911038c43f5658fa7f3113ecdd3e8cd",
+      "bundled_path": "references/upstream/docs/git-github-guide.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/docs/git-github-guide.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/docs/known-issues.md",
+      "source_blob_sha": "4d2c2a6cd27ca13bc742327efa8f33ea06fe2597",
+      "bundled_path": "references/upstream/docs/known-issues.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/docs/known-issues.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/docs/setup-guide.md",
+      "source_blob_sha": "ea7864dc93e31d01bcfc8703b40b7da89e2e8e8c",
+      "bundled_path": "references/upstream/docs/setup-guide.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/docs/setup-guide.md"
+    },
+    {
+      "repository": "HappyStarfish/Accessibility-mod-template",
+      "commit": "d75a087114b1f9a4b99d38d1e03c05e253a400f1",
+      "source_path": "Accessibility-Mod-Template/docs/unity-reflection-guide.md",
+      "source_blob_sha": "69889ef826acd1aed5657cf4f828b39070d0d03f",
+      "bundled_path": "references/upstream/docs/unity-reflection-guide.md",
+      "source_url": "https://github.com/HappyStarfish/Accessibility-mod-template/blob/d75a087114b1f9a4b99d38d1e03c05e253a400f1/Accessibility-Mod-Template/docs/unity-reflection-guide.md"
+    }
+  ],
+  "external_book": {
+    "repository": "blal1/BOOK_OF_ACCESSIBILITY_MODING",
+    "ref": "ef8e256559f53d740f5309dca6531d1f052a7639",
+    "bundled": false,
+    "reason": "No stated reuse license in inspected repository; linked with concise original technical notes only."
+  }
+}
