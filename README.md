@@ -1,8 +1,6 @@
 # Game Accessibility Mod Skill
 
-**Original project credits:** Thank you to **Happy Starfish / Plueschyoda** and the contributors behind the [Accessibility Mod Template](https://github.com/HappyStarfish/Accessibility-mod-template), and to **VIPPotato** for the [Codex edition](https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition). Their work provided this project's foundation. The original documents, attribution, and license notices remain included.
-
-This project, maintained by Swarup Baral, expands that foundation into a portable skill with researched references, practical helpers, and a Windows installer.
+This project, maintained by Swarup Baral, provides a portable skill with researched references, practical helpers, and a Windows installer.
 
 It provides reusable guidance to help an AI coding assistant build accessibility mods for blind players, focusing on screen-reader speech, simple keyboard controls, story text, movement, and honest testing.
 
@@ -167,3 +165,7 @@ For release commands and the GitHub publication helper, see [maintaining the pac
 - **Research can become outdated.** Bundled references are dated; blogs describe particular experiences. Verify findings against the actual installed game before applying them.
 - **Preserve game files and saves.** Review relevant changes and keep suitable backups. Check the game's modding policy and any online/anti-cheat restrictions; this package is not permission to bypass them or redistribute game code.
 - **You remain in control.** Review proposed changes and what was actually tested. Missing runtime or speech evidence should remain explicitly unverified, rather than being described as complete.
+
+## Credits
+
+**Original project credits:** Thank you to **Happy Starfish / Plueschyoda** and the contributors behind the [Accessibility Mod Template](https://github.com/HappyStarfish/Accessibility-mod-template), and to **VIPPotato** for the [Codex edition](https://github.com/VIPPotato/Accessibility-mod-template-Codex-edition). Their work provided this project's foundation. The original documents, attribution, and license notices remain included.

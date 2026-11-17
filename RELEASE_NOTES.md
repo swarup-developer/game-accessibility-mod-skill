@@ -1,4 +1,4 @@
-Version 0.1.2: expanded the README with original credits first, direct download links, ZIP extraction, installation/activation, shared-folder behavior, updates/removal, troubleshooting, contributions, and a complete limitations section. Both download formats retain their license terms.
+Version 0.1.3: moved the original project credits to the end of the README. Download, installation, troubleshooting, licensing, and limitations guidance remains included.
 
 - Portable Agent Skills layout with documented local destinations for Codex, Claude Code, Gemini CLI, Antigravity, and Freebuff CLI.
 - Windows installer and removal helper with integrity checks and preserved backups.
