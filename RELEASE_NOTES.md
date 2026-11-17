@@ -1,4 +1,4 @@
-Version 0.1.1: includes the license and attribution terms inside the skill-only download, as well as the full installer package.
+Version 0.1.2: expanded the README with original credits first, direct download links, ZIP extraction, installation/activation, shared-folder behavior, updates/removal, troubleshooting, contributions, and a complete limitations section. Both download formats retain their license terms.
 
 - Portable Agent Skills layout with documented local destinations for Codex, Claude Code, Gemini CLI, Antigravity, and Freebuff CLI.
 - Windows installer and removal helper with integrity checks and preserved backups.
